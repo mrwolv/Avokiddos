@@ -1,15 +1,15 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { motion } from 'framer-motion';
+
 import 'swiper/css';
 import { gsap } from 'gsap';
 
 const ImageSlider = () => {
-
-  gsap.to('slide-text',{
-    opacity:1,
-    y:40,
-    ease:'power4.out',
-  })
+  const animateText = () =>
+    gsap.fromTo(
+      '.animate-text',
+      { opacity: 0, y: 400 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power1.out' }
+    );
 
   return (
     <Swiper
@@ -18,35 +18,22 @@ const ImageSlider = () => {
       slidesPerView={1}
       loop={true}
       onSlideChange={() => console.log('slide change')}
-      onSwiper={swiper => console.log(swiper)}
+      onSwiper={animateText}
     >
       <SwiperSlide className='relative z-10 flex items-center left-[-20px]'>
         <img src='/kids.jpg' alt='jery' className='w-full' />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className='ml-10 mt-6 absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[55rem] md:-translate-x-1/2;
- '
-        >
-          <p className='text-[3.1rem] font-lovesunshine'>
+        <div className=' animate-text ml-36  absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[10rem] left-[59rem] '>
+          <p className='text-[2.8rem] font-lovesunshine'>
             Summer Sorbet Collection is here for your lil ones
           </p>
           <button className='mt-4 px-7 py-1.5 border-2 border-dashed uppercase font-semibold hover:bg-[#ff9b70]'>
             shop now
           </button>
-        </motion.div>
+        </div>
       </SwiperSlide>
       <SwiperSlide className='relative z-10 flex items-center left-[-20px]'>
         <img src='download.jpg' alt='jery' className='h-full' />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          
-          transition={{ duration: 1 }}
-          className='ml-20 mt-6  absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[55rem] md:-translate-x-1/2;
- '
-        >
+        <div className='ml-20 mt-20  absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[59rem] md:-translate-x-1/2'>
           <p className='text-[2.8rem] font-lovesunshine'>
             Stylish & Comfortable Options For Your Li&apos;l One
           </p>
@@ -58,23 +45,19 @@ const ImageSlider = () => {
               shop now
             </button>
           </div>
-        </motion.div>
+        </div>
       </SwiperSlide>
       <SwiperSlide>
         <img src='Header-2.jpg' alt='jery' className='h-full' />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className='ml-20 mt-6 absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[55rem] ;
+        <div
+          className='ml-52 mt-20 absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[55rem] ;
  '
         >
           <p className='text-[3.6rem] font-lovesunshine'>New Arrivals</p>
           <button className=' mt-10 px-7 py-1.5 border-2 border-dashed uppercase font-semibold hover:bg-[#ff9b70]'>
             shop now
           </button>
-        </motion.div>
-        
+        </div>
       </SwiperSlide>
     </Swiper>
   );
