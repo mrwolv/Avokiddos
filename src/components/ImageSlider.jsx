@@ -26,7 +26,7 @@ const ImageSlider = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className='ml-8 mt-6 absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[55rem] md:-translate-x-1/2;
+          className='ml-10 mt-6 absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[55rem] md:-translate-x-1/2;
  '
         >
           <p className='text-[3.1rem] font-lovesunshine'>
