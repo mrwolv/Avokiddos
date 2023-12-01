@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital@0;1&family=Poppins&display=swap');
+@font-face {
+  font-family:'lovesunshine' ;
+  src: url('/lovesunshine.ttf');
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Mali', cursive;
+  box-sizing: border-box;
+}
+.custom-font-section {
+  font-family: 'lovesunshine', sans-serif;
+}
+
