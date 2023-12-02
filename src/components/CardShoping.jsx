@@ -1,24 +1,20 @@
-import { React } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { CiHeart } from 'react-icons/ci';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
-import { useSwiper } from 'swiper/react';
+import { EffectFade } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 const CardShoping = () => {
-  const swiper = useSwiper();
+  const swiperRef = useRef();
 
-  function handlePrev() {
-    console.log('working');
-    swiper.slidePrev();
-  }
-
-  function handleNext() {
-    console.log('working');
-    swiper.slideNext();
-  }
+  const handleNext = () => {
+    swiperRef.current.slideNext();
+  };
+  const handlePrev = () => {
+    swiperRef.current.slidePrev();
+  };
 
   const shoppingData = [
     {
@@ -72,11 +68,14 @@ const CardShoping = () => {
         />
       </span>
       <Swiper
+        modules={[EffectFade]}
         spaceBetween={30}
         slidesPerView={4}
         loop={true}
-        onSlideChange={() => console.log('working')}
-       
+        onSwiper={swiper => {
+          swiperRef.current = swiper;
+        }}
+        effect="fade"
       >
         {shoppingData.map(item => (
           <>
