@@ -8,7 +8,7 @@ const ImageSlider = () => {
     gsap.fromTo(
       '.animate-text',
       {
-        y: 800,
+        y: '100%',
         opacity: 0
       },
       {
