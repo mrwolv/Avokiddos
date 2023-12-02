@@ -108,7 +108,7 @@ const BoxContainer = () => {
               : 'absolute top-[40%] left-[45%] bg-slate-100 px-6 py-2 text-[1.7rem] md:bg-opacity-90 '
           }`}
         >
-          Boys
+          New Arrivals
         </span>
 
         <img src="kid3.jpg" alt="kid1" />
