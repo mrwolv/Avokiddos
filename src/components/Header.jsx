@@ -2,6 +2,8 @@ import { CiMail, CiFacebook } from 'react-icons/ci';
 import { FaPhone, FaInstagram } from 'react-icons/fa6';
 import Navbar from './Navbar';
 import ImageSlider from './ImageSlider';
+import HeadlineSecton from './HeadlineSecton';
+import BoxContainer from './BoxContainer';
 
 
 const Header = () => {
@@ -34,6 +36,8 @@ const Header = () => {
       </div>
       <Navbar/>
       <ImageSlider/>
+      <HeadlineSecton/>
+      <BoxContainer/>
     </div>
   );
 };

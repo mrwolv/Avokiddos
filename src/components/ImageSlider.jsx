@@ -7,8 +7,17 @@ const ImageSlider = () => {
   const animateText = () =>
     gsap.fromTo(
       '.animate-text',
-      { opacity: 0, y: 400 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power1.out' }
+      {
+        y: 800,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 2.3,
+        ease: 'power3.out'
+      }
     );
 
   return (
@@ -17,11 +26,10 @@ const ImageSlider = () => {
       spaceBetween={50}
       slidesPerView={1}
       loop={true}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={animateText}
+      onSlideChange={animateText}
     >
       <SwiperSlide className='relative hover:cursor-pointer'>
-        <img src='/kids.jpg' alt='jery' />
+        <img src='/kids.jpg' alt='jery' height={501} />
         <div className=' animate-text ml-36 absolute  md:absolute text-white transform -translate-x-1/2 -translate-y-1/2 md:top-[10rem] md:left-[59rem] '>
           <p className='text-[2.8rem] font-lovesunshine'>
             Summer Sorbet Collection is here for your lil ones
@@ -34,7 +42,7 @@ const ImageSlider = () => {
 
       <SwiperSlide className='cursor-pointer '>
         <img src='/download.jpg' alt='jery' />
-        <div className='ml-20 mt-20  absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[59rem] md:-translate-x-1/2'>
+        <div className=' animate-text ml-20 mt-20  absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[59rem] md:-translate-x-1/2'>
           <p className='text-[2.8rem] font-lovesunshine'>
             Stylish & Comfortable Options For Your Li&apos;l One
           </p>
@@ -51,7 +59,7 @@ const ImageSlider = () => {
       <SwiperSlide className='cursor-pointer'>
         <img src='/Header-2.jpg' alt='jery' />
         <div
-          className='ml-52 mt-20 absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[55rem] ;
+          className='animate-text ml-52 mt-20 absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[55rem] ;
  '
         >
           <p className='text-[3.6rem] font-lovesunshine'>New Arrivals</p>
