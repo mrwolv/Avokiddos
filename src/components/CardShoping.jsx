@@ -1,11 +1,101 @@
+import { React } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { CiHeart } from 'react-icons/ci';
+import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
+import { useSwiper } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const CardShoping = () => {
+  const swiper = useSwiper();
+
+  function handlePrev() {
+    console.log('working');
+    swiper.slidePrev();
+  }
+
+  function handleNext() {
+    console.log('working');
+    swiper.slideNext();
+  }
+
+  const shoppingData = [
+    {
+      id: 1,
+      imageUrl: '/public/kid4.jpg',
+      altText: 'KidImages',
+    },
+    {
+      id: 2,
+      imageUrl: '/public/kid4.jpg',
+      altText: 'KidImages',
+    },
+    {
+      id: 3,
+      imageUrl: '/public/kid4.jpg',
+      altText: 'KidImages',
+    },
+    {
+      id: 4,
+      imageUrl: '/public/kid4.jpg',
+      altText: 'KidImages',
+    },
+    {
+      id: 5,
+      imageUrl: '/public/kid4.jpg',
+      altText: 'KidImages',
+    },
+    {
+      id: 6,
+      imageUrl: '/public/kid4.jpg',
+      altText: 'KidImages',
+    },
+    {
+      id: 7,
+      imageUrl: '/public/kid4.jpg',
+      altText: 'KidImages',
+    },
+    {
+      id: 8,
+      imageUrl: '/public/kid4.jpg',
+      altText: 'KidImages',
+    },
+  ];
+
   return (
-    <article className="px-28 md:px-44 mt-8 md:mt-20">
-      <Swiper spaceBetween={50} slidesPerView={4} loop={true}>
-        <SwiperSlide>
+    <article className="px-28 md:px-32 mt-8 md:mt-20 md:flex md:items-center md:gap-8">
+      <span>
+        <IoIosArrowBack
+          className="text-lg hover:cursor-pointer"
+          onClick={handlePrev}
+        />
+      </span>
+      <Swiper
+        spaceBetween={30}
+        slidesPerView={4}
+        loop={true}
+        onSlideChange={() => console.log('working')}
+       
+      >
+        {shoppingData.map(item => (
+          <>
+            <SwiperSlide className="hover:cursor-pointer">
+              <figure className="relative" key={item.id}>
+                <img src={item.imageUrl} alt={item.altText} />
+              </figure>
+              <span className="md:absolute md:top-[28px] md:right-[24px] ">
+                <CiHeart className="text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer" />
+              </span>
+              <div className=" md:absolute md:top-[50%] md:left-[14%] ">
+                <button className="border-none bg-[#EF564C] text-white px-12 py-2">
+                  Add to cart
+                </button>
+              </div>
+            </SwiperSlide>
+          </>
+        ))}
+        {/* <SwiperSlide>
           <figure className="relative">
             <img src="/public/kid4.jpg" alt="kid4" />
           </figure>
@@ -43,21 +133,14 @@ const CardShoping = () => {
               Add to cart
             </button>
           </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <figure className="relative">
-            <img src="/public/kid4.jpg" alt="kid4" />
-          </figure>
-          <span className="md:absolute top-[28px] right-[24px] ">
-            <CiHeart className="text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer" />
-          </span>
-          <div className=" md:absolute md:top-[50%] md:left-[14%] ">
-            <button className="border-none bg-[#EF564C] text-white px-12 py-2">
-              Add to cart
-            </button>
-          </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
+      <span>
+        <IoIosArrowForward
+          className=" text-lg hover:cursor-pointer"
+          onClick={handleNext}
+        />
+      </span>
     </article>
   );
 };
