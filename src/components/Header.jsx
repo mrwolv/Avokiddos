@@ -6,7 +6,7 @@ import ImageSlider from './ImageSlider';
 
 const Header = () => {
   return (
-    <>
+    <div>
       <header className='bg-[#EF564C] h-11 text-white flex items-center justify-between text-[13.6px] sm:flex sm:justify-between sm:px-8'>
         <div className='hidden gap-8 cursor-pointer sm:flex sm:items-center '>
           <div className='sm:flex sm:items-center '>
@@ -34,7 +34,7 @@ const Header = () => {
       </div>
       <Navbar/>
       <ImageSlider/>
-    </>
+    </div>
   );
 };
 

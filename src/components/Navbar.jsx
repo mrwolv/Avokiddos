@@ -101,7 +101,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <section className='flex items-center justify-between px-8 mt-4 overflow-hidden md:flex '>
+      <section className='relative flex items-center justify-between px-8 mt-4 overflow-hidden md:flex '>
         <div className='hidden md:px-8 md:gap-20 md:items-center md:flex '>
           <form>
             <div className='relative flex items-center justify-center'>
@@ -141,7 +141,7 @@ const Navbar = () => {
                 </Dropdown>
               </li>
 
-              <li className=' hover:text-red-400'>
+              <li className='hover:text-red-400'>
                 <Dropdown overlay={girlsMenu}>
                   <a onClick={e => e.preventDefault()}>
                     <Space>
@@ -156,8 +156,8 @@ const Navbar = () => {
             </ul>
           </navbar>
         </div>
-        <div className='relative flex items-center justify-center bottom-[7.4rem] left-[32rem] md:relative md:bottom-0 md:left-0 '>
-          <ul className='flex items-center justify-center gap-4 hover:cursor-pointer '>
+        <div className='relative md:flex md:items-center md:justify-center '>
+          <ul className='flex gap-4 md:justify-center md:items-center md:flex hover:cursor-pointer'>
             <li className='hover:text-red-400'>
               <CiHeart size={20} />
             </li>

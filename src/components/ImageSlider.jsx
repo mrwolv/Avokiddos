@@ -13,16 +13,16 @@ const ImageSlider = () => {
 
   return (
     <Swiper
-      className='mt-8 cursor-pointer'
+      className='mt-8 cursor-pointer md:mt-10'
       spaceBetween={50}
       slidesPerView={1}
       loop={true}
       onSlideChange={() => console.log('slide change')}
       onSwiper={animateText}
     >
-      <SwiperSlide className='relative z-10 flex items-center left-[-20px]'>
-        <img src='/kids.jpg' alt='jery' className='w-full' />
-        <div className=' animate-text ml-36  absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[10rem] left-[59rem] '>
+      <SwiperSlide className='relative hover:cursor-pointer'>
+        <img src='/kids.jpg' alt='jery' />
+        <div className=' animate-text ml-36 absolute  md:absolute text-white transform -translate-x-1/2 -translate-y-1/2 md:top-[10rem] md:left-[59rem] '>
           <p className='text-[2.8rem] font-lovesunshine'>
             Summer Sorbet Collection is here for your lil ones
           </p>
@@ -31,8 +31,9 @@ const ImageSlider = () => {
           </button>
         </div>
       </SwiperSlide>
-      <SwiperSlide className='relative z-10 flex items-center left-[-20px]'>
-        <img src='download.jpg' alt='jery' className='h-full' />
+
+      <SwiperSlide className='cursor-pointer '>
+        <img src='/download.jpg' alt='jery' />
         <div className='ml-20 mt-20  absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[59rem] md:-translate-x-1/2'>
           <p className='text-[2.8rem] font-lovesunshine'>
             Stylish & Comfortable Options For Your Li&apos;l One
@@ -47,8 +48,8 @@ const ImageSlider = () => {
           </div>
         </div>
       </SwiperSlide>
-      <SwiperSlide>
-        <img src='Header-2.jpg' alt='jery' className='h-full' />
+      <SwiperSlide className='cursor-pointer'>
+        <img src='/Header-2.jpg' alt='jery' />
         <div
           className='ml-52 mt-20 absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[55rem] ;
  '
