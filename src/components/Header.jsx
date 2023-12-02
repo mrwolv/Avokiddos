@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import ImageSlider from './ImageSlider';
 import HeadlineSecton from './HeadlineSecton';
 import BoxContainer from './BoxContainer';
+import ShoppingCards from './ShoppingCards';
 
 
 const Header = () => {
@@ -38,6 +39,7 @@ const Header = () => {
       <ImageSlider/>
       <HeadlineSecton/>
       <BoxContainer/>
+      <ShoppingCards/>
     </div>
   );
 };
