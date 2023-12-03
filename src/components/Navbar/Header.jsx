@@ -1,10 +1,10 @@
 import { CiMail, CiFacebook } from 'react-icons/ci';
 import { FaPhone, FaInstagram } from 'react-icons/fa6';
 import Navbar from './Navbar';
-import ImageSlider from './ImageSlider';
-import HeadlineSecton from './HeadlineSecton';
-import BoxContainer from './BoxContainer';
-import ShoppingCards from './ShoppingCards';
+import ImageSlider from '../Slider/ImageSlider';
+import HeadlineSecton from '../HeadlineSecton';
+import BoxContainer from '../BoxContainer';
+import ShoppingCards from '../Shopping/ShoppingCards';
 
 
 const Header = () => {

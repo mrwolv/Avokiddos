@@ -17,48 +17,48 @@ const CardShoping = () => {
   const shoppingData = [
     {
       id: 1,
-      imageUrl: '/public/kid4.jpg',
+      imageUrl: '/kid4.jpg',
       altText: 'KidImages',
     },
     {
       id: 2,
-      imageUrl: '/public/kid4.jpg',
+      imageUrl: '/kid4.jpg',
       altText: 'KidImages',
     },
     {
       id: 3,
-      imageUrl: '/public/kid4.jpg',
+      imageUrl: '/kid4.jpg',
       altText: 'KidImages',
     },
     {
       id: 4,
-      imageUrl: '/public/kid4.jpg',
+      imageUrl: '/kid4.jpg',
       altText: 'KidImages',
     },
     {
       id: 5,
-      imageUrl: '/public/kid4.jpg',
+      imageUrl: '/kid4.jpg',
       altText: 'KidImages',
     },
     {
       id: 6,
-      imageUrl: '/public/kid4.jpg',
+      imageUrl: '/kid4.jpg',
       altText: 'KidImages',
     },
     {
       id: 7,
-      imageUrl: '/public/kid4.jpg',
+      imageUrl: '/kid4.jpg',
       altText: 'KidImages',
     },
     {
       id: 8,
-      imageUrl: '/public/kid4.jpg',
+      imageUrl: '/kid4.jpg',
       altText: 'KidImages',
     },
   ];
 
   return (
-    <article className="px-28 md:px-32 mt-8 md:mt-20 md:flex md:items-center md:gap-8">
+    <article className="mt-8 px-28 md:px-32 md:mt-20 md:flex md:items-center md:gap-8">
       <span>
         <IoIosArrowBack
           className="text-lg hover:cursor-pointer"
@@ -95,7 +95,7 @@ const CardShoping = () => {
         ))}
         {/* <SwiperSlide>
           <figure className="relative">
-            <img src="/public/kid4.jpg" alt="kid4" />
+            <img src="/kid4.jpg" alt="kid4" />
           </figure>
           <span className="md:absolute top-[28px] right-[24px] ">
             <CiHeart className="text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer" />
@@ -108,7 +108,7 @@ const CardShoping = () => {
         </SwiperSlide>
         <SwiperSlide>
           <figure className="relative">
-            <img src="/public/kid4.jpg" alt="kid4" />
+            <img src="/kid4.jpg" alt="kid4" />
           </figure>
           <span className="md:absolute top-[28px] right-[24px] ">
             <CiHeart className="text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer" />
@@ -121,7 +121,7 @@ const CardShoping = () => {
         </SwiperSlide>
         <SwiperSlide>
           <figure className="relative">
-            <img src="/public/kid4.jpg" alt="kid4" />
+            <img src="/kid4.jpg" alt="kid4" />
           </figure>
           <span className="md:absolute top-[28px] right-[24px] ">
             <CiHeart className="text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer" />
@@ -135,7 +135,7 @@ const CardShoping = () => {
       </Swiper>
       <span>
         <IoIosArrowForward
-          className=" text-lg hover:cursor-pointer"
+          className="text-lg  hover:cursor-pointer"
           onClick={handleNext}
         />
       </span>
