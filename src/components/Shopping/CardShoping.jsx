@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import {  useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { CiHeart } from 'react-icons/ci';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
@@ -135,7 +135,7 @@ const CardShoping = () => {
       </Swiper>
       <span>
         <IoIosArrowForward
-          className="text-lg  hover:cursor-pointer"
+          className="text-lg hover:cursor-pointer"
           onClick={handleNext}
         />
       </span>
