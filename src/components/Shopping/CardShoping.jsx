@@ -104,15 +104,27 @@ const CardShoping = () => {
               <span className=' absolute top-[10px] right-[8px] md:absolute md:top-[28px] md:right-[24px] '>
                 <CiHeart className='text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer' />
               </span>
-              <div className=' absolute top-[50%] left-[12%]  md:absolute md:top-[50%] md:left-[10%] '>
+              <div className=' absolute top-[40%] left-[12%]  md:absolute md:top-[40%] md:left-[10%] '>
                 <button className='border-none bg-[#EF564C] text-white md:px-10 md:py-2.5 text-[.9rem] px-6 py-1.5 md:text-[1.1rem]'>
                   Add to cart
                 </button>
+              </div>
+              <div className='flex flex-col items-center gap-1 mt-6 '>
+                <span className='text-center text-[1.1rem]'>
+                  Hooded stripped shirt
+                </span>
+                <span className='flex gap-3'>
+                  {/* <span>3244</span> */}
+                  <span className='text-center font-bold text-[1rem]'>
+                   &#8377; 1,550.00
+                  </span>
+                </span>
               </div>
             </SwiperSlide>
           </>
         ))}
       </Swiper>
+
       <span>
         <IoIosArrowForward
           className='text-lg hover:cursor-pointer'
