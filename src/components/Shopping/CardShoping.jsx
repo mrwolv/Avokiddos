@@ -103,7 +103,7 @@ const CardShoping = () => {
             <figure className='relative'>
               <img src={item.imageUrl} alt={item.altText} className='' />
             </figure>
-            <div className='absolute top-[20px] right-[2.1rem]  lg:absolute lg:top-[28px] lg:right-[24px]'>
+            <div className='absolute top-[20px] right-[2.7rem]  lg:absolute lg:top-[28px] lg:right-[24px]'>
               <CiHeart className='text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer' />
             </div>
             <div className='absolute top-[40%] left-[21%] md:absolute md:top-[40%] md:left-[10%]'>

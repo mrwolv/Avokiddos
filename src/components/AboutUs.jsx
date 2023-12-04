@@ -20,23 +20,23 @@ const AboutUs = () => {
         <img
           src='Vector-14.png'
           alt='vector14'
-          className=' absolute top-0 right-0 transform  translate-x-[23%] translate-y-[40%] md:translate-x-[22%] md:-translate-y-[3%] w-32 md:w-56'
+          className=' absolute top-0 right-0 transform  translate-x-[30%] translate-y-[60%] md:translate-x-[22%] md:-translate-y-[3%] w-32 md:w-56 '
         />
-        <h2 className='font-lovesunshine text-[#0b315f] text-[2.4rem]'>
+        <h2 className='font-lovesunshine text-[#0b315f] text-[2.4rem] text-center md:text-left'>
           About us
         </h2>
-        <p className='mt-4 text-[#6c7175] text-[.9rem] md:text-[1rem]'>
+        <p className='mt-4 text-[#6c7175] text-[.9rem] md:text-[1rem] text-center md:text-left'>
           Little ones outgrow their dresses faster than one can think forcing
           the parents to always be on the lookout. Avokiddos brings for you
           stylish and comfortable options to suit your sweethearts. Browse our
           catalog for the exclusive range of colors and designs.
-          <p className='mt-2'>
+          <p className='mt-2 '>
             A quick scroll down the page will reveal all categories for kids
             fashion.
           </p>
         </p>
-        <p className='flex items-center justify-start mt-6 text-white hover:cursor-pointer'>
-          <span className='hover:underline'>Read our Story</span>
+        <p className='flex items-center justify-start mt-6 text-center text-white ml-28 hover:cursor-pointer md:text-left md:ml-0'>
+          <span className=' hover:underline'>Read our Story</span>
           <IoIosArrowForward className='font-bold text-right text-red-500 hover:text-black' />
         </p>
         
