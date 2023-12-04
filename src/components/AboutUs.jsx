@@ -2,7 +2,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 
 const AboutUs = () => {
   return (
-    <section className=' md:mt-12 mt-6 bg-[#fedacd] h-[450px] md:h-[450px] md:p-8 p-5 md:flex  md:justify-around '>
+    <section className=' md:mt-12 mt-6 bg-[#fedacd] h-[500px] md:h-[450px] md:p-8 p-5 md:flex  md:justify-around '>
       <div className='flex-1 mt-6 md:mt-20'>
         <div className='relative flex items-center'>
           <img
@@ -11,7 +11,7 @@ const AboutUs = () => {
             width={600}
             className='md:absolute md:transform md:-translate-x-[60%] md:-translate-y-[25%] md:inset-1/2 hidden md:block'
           />
-          <h1 className='md:mt-8 md:ml-16 text-center font-lovesunshine text-[#0b315f] md:text-[2.3rem] text-[1.6rem] absolute top-0 h-[400px] w-[400px]'>
+          <h1 className='md:mt-8 md:ml-16 text-center font-lovesunshine text-[#0b315f] md:text-[2.3rem] text-[1.4rem] absolute top-0 h-[400px] w-[350px]'>
             “Build up wonderful wardrobes for your little ones”
           </h1>
         </div>

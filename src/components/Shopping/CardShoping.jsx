@@ -104,9 +104,9 @@ const CardShoping = () => {
           className=''
         />
       </figure>
-      <span className='absolute top-[10px] right-[8px] md:absolute md:top-[28px] md:right-[24px]'>
+      <div className='absolute top-[10px] right-[1.2rem] md:absolute md:top-[28px] sm:right-[24px]'>
         <CiHeart className='text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer' />
-      </span>
+      </div>
       <div className=' absolute top-[40%] left-[21%] md:absolute md:top-[40%] md:left-[10%]'>
         <button className='border-none bg-[#EF564C] text-white md:px-8 md:py-1.5 text-[1rem] px-8 py-4 md:text-[1.1rem]'>
           Add to cart
