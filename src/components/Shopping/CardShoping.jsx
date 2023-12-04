@@ -7,6 +7,15 @@ const CardShoping = () => {
   const swiperRef = useRef();
   const [slidesPerView, setSlidesPerView] = useState(4);
   const [slidesPerGroup, setSlidesPerGroup] = useState(1);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleMouseEnter = index => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -98,16 +107,27 @@ const CardShoping = () => {
         }}
         speed={1000}
       >
-        {shoppingData.map(item => (
-          <SwiperSlide className=' hover:cursor-pointer' key={item.id}>
+        {shoppingData.map((item) => (
+          <SwiperSlide
+            className=' hover:cursor-pointer'
+            key={item.id}
+            onMouseEnter={() => handleMouseEnter(item.id)}
+            onMouseLeave={handleMouseLeave}
+          >
             <figure className='relative'>
-              <img src={item.imageUrl} alt={item.altText} className='' />
+              <img src={item.imageUrl} alt={item.altText} />
             </figure>
             <div className='absolute top-[20px] right-[2.7rem]  lg:absolute lg:top-[28px] lg:right-[24px]'>
               <CiHeart className='text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer' />
             </div>
             <div className='absolute top-[40%] left-[21%] md:absolute md:top-[40%] md:left-[10%]'>
-              <button className='border-none bg-[#EF564C] text-white md:px-8 md:py-1.5 text-[1rem] px-8 py-4 md:text-[1.1rem]'>
+              <button
+                className={`${
+                  hoveredIndex === item.id
+                    ? 'border-none bg-[#EF564C] text-white md:px-8 md:py-1.5 text-[1rem] px-8 py-4 md:text-[1.1rem]'
+                    : 'hidden'
+                }`}
+              >
                 Add to cart
               </button>
             </div>

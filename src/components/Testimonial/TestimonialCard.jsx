@@ -22,6 +22,7 @@ const TestimonialCard = () => {
           made with breathable fabric and modern designs. Comfortable clothing
           with styling is what the brand is about&quot;
         </p>
+        
       </div>
     </div>
   );
