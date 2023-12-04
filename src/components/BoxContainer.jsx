@@ -50,41 +50,47 @@ gsap.fromTo(
   );
 
   return (
-    <section className='grid md:grid-cols-3 hover:cursor-pointer'>
-      <div
-        className='relative'
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-      >
-        <div>
-          <span
-            className={`${
-              hover
-                ? 'hidden'
-                : 'absolute top-[40%] left-[45%] bg-slate-100 px-6 py-2 text-[1.7rem] md:bg-opacity-90 '
-            }`}
-          >
-            Boys
-          </span>
+    <section className='grid md:grid-cols-3 hover:cursor-pointer '>
+<div
+  className='relative'
+  onMouseEnter={() => setHover(true)}
+  onMouseLeave={() => setHover(false)}
+>
+  <div>
+    <span
+      className={`${
+        hover
+          ? 'hidden'
+          : 'absolute top-[40%] left-[45%] bg-slate-100 px-6 py-2 text-[1.7rem] md:bg-opacity-90'
+      }`}
+    >
+      Boys
+    </span>
 
-          <img src='kid1.jpg' alt='kid1' />
-          {/* Putting text here and animation */}
-          <div
-            className={`${
-              hover
-                ? 'animate-text absolute inset-0 bg-red-700 bg-opacity-70 '
-                : 'hidden'
-            }`}
-          >
-            <div className='absolute text-white top-[40%] left-[34%] flex flex-col gap-1 '>
-              <span className='text-[2.1rem] text-center'>Boys Fashion</span>
-              <span className='text-[1.2rem] text-center'>
-                Explore more &#10095;{' '}
-              </span>
-            </div>
-          </div>
-        </div>
+    <img
+      src='kid1.jpg'
+      alt='kid1'
+      className='mx-auto md:w-full md:h-auto '
+    />
+    {/* Putting text here and animation */}
+    <div
+      className={`${
+        hover
+          ? 'animate-text absolute inset-0 bg-red-700 bg-opacity-70'
+          : 'hidden'
+      }`}
+    >
+      <div className='absolute text-white top-[40%] left-[34%] flex flex-col gap-1 '>
+        <span className='text-[2.1rem] text-center'>Boys Fashion</span>
+        <span className='text-[1.2rem] text-center'>
+          Explore more &#10095;{' '}
+        </span>
       </div>
+    </div>
+  </div>
+</div>
+
+{/* Secoond headimages */}
       <div
         className='relative'
         onMouseEnter={() => setHover2(true)}
@@ -100,7 +106,7 @@ gsap.fromTo(
           Boys
         </span>
 
-        <img src='kid2.jpg' alt='kid1' />
+        <img src='kid2.jpg' alt='kid1' className = 'mx-auto md:w-full md:h-auto ' />
         {/* Putting girls animation  */}
         <div
           className={`${
@@ -132,7 +138,7 @@ gsap.fromTo(
           New Arrivals
         </span>
 
-        <img src='kid3.jpg' alt='kid1' />
+        <img src='kid3.jpg' alt='kid1' className = 'mx-auto md:w-full md:h-auto ' />
         {/* Putting new arrivals animation  */}
         <div
           className={`${
