@@ -6,7 +6,7 @@ import HeadlineSecton from '../HeadlineSecton';
 import BoxContainer from '../BoxContainer';
 import ShoppingCards from '../Shopping/ShoppingCards';
 import AboutUs from '../AboutUs';
-import Testimonials from '../Testimonials';
+import Testimonials from '../Testimonial/Testimonials';
 
 const Header = () => {
   return (
@@ -48,6 +48,8 @@ const Header = () => {
       <ShoppingCards />
       <AboutUs />
       <Testimonials/>
+      <ShoppingCards />;
+
     </div>
   );
 };
