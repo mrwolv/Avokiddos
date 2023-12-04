@@ -78,52 +78,52 @@ const CardShoping = () => {
   ];
 
   return (
-    <article className='flex items-center justify-between mt-8 px-28 md:px-32 md:mt-20 md:gap-8'>
+    <article className='flex items-center justify-between px-4 mt-8 md:px-28 md:mt-20 md:gap-8'>
       <span>
         <IoIosArrowBack
           className='text-lg hover:cursor-pointer'
           onClick={handlePrev}
         />
       </span>
-      <Swiper
-        slidesPerGroup={slidesPerGroup}
-        spaceBetween={30}
-        slidesPerView={slidesPerView}
-        loop={true}
-        onSwiper={swiper => {
-          swiperRef.current = swiper;
-        }}
-        speed={1000}
-      >
-        {shoppingData.map(item => (
-          <>
-            <SwiperSlide className='hover:cursor-pointer'>
-              <figure className='relative' key={item.id}>
-                <img src={item.imageUrl} alt={item.altText} />
-              </figure>
-              <span className=' absolute top-[10px] right-[8px] md:absolute md:top-[28px] md:right-[24px] '>
-                <CiHeart className='text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer' />
-              </span>
-              <div className=' absolute top-[40%] left-[12%]  md:absolute md:top-[40%] md:left-[10%] '>
-                <button className='border-none bg-[#EF564C] text-white md:px-10 md:py-2.5 text-[.9rem] px-6 py-1.5 md:text-[1.1rem]'>
-                  Add to cart
-                </button>
-              </div>
-              <div className='flex flex-col items-center gap-1 mt-6 '>
-                <span className='text-center text-[1.1rem]'>
-                  Hooded stripped shirt
-                </span>
-                <span className='flex gap-3'>
-                  {/* <span>3244</span> */}
-                  <span className='text-center font-bold text-[1rem]'>
-                   &#8377; 1,550.00
-                  </span>
-                </span>
-              </div>
-            </SwiperSlide>
-          </>
-        ))}
-      </Swiper>
+     <Swiper
+  slidesPerGroup={slidesPerGroup}
+  spaceBetween={60}
+  slidesPerView={slidesPerView}
+  loop={true}
+  onSwiper={swiper => {
+    swiperRef.current = swiper;
+  }}
+  speed={1000}
+>
+  {shoppingData.map(item => (
+    <SwiperSlide className='hover:cursor-pointer' key={item.id}>
+      <figure className='relative'>
+        <img
+          src={item.imageUrl}
+          alt={item.altText}
+          className=''
+        />
+      </figure>
+      <span className='absolute top-[10px] right-[8px] md:absolute md:top-[28px] md:right-[24px]'>
+        <CiHeart className='text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer' />
+      </span>
+      <div className=' absolute top-[40%] left-[21%] md:absolute md:top-[40%] md:left-[10%]'>
+        <button className='border-none bg-[#EF564C] text-white md:px-8 md:py-1.5 text-[1rem] px-8 py-4 md:text-[1.1rem]'>
+          Add to cart
+        </button>
+      </div>
+      <div className='flex flex-col items-center gap-1 mt-6'>
+        <span className='text-center text-[1.1rem]'>Hooded stripped shirt</span>
+        <span className='flex gap-3'>
+          <span className='text-center font-bold text-[1rem]'>
+            &#8377; 1,550.00
+          </span>
+        </span>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
 
       <span>
         <IoIosArrowForward
