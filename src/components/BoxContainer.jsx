@@ -61,7 +61,7 @@ gsap.fromTo(
       className={`${
         hover
           ? 'hidden'
-          : 'absolute top-[40%] left-[45%] bg-slate-100 px-6 py-2 text-[1.7rem] md:bg-opacity-90'
+          : 'absolute top-[40%] left-[37%] bg-slate-100 px-6 py-2 text-[1.7rem] md:bg-opacity-90'
       }`}
     >
       Boys
@@ -100,13 +100,13 @@ gsap.fromTo(
           className={`${
             hover2
               ? 'hidden'
-              : 'absolute top-[40%] left-[45%] bg-slate-100 px-6 py-2 text-[1.7rem] md:bg-opacity-70 '
+              : 'absolute top-[40%] left-[37%] bg-slate-100 px-6 py-2 text-[1.7rem] md:bg-opacity-70 '
           }`}
         >
-          Boys
+          Girls
         </span>
 
-        <img src='kid2.jpg' alt='kid1' className = 'mx-auto md:w-full md:h-auto ' />
+        <img src='kid2.jpg' alt='kid1' className='mx-auto md:w-full md:h-auto ' />
         {/* Putting girls animation  */}
         <div
           className={`${
@@ -132,7 +132,7 @@ gsap.fromTo(
           className={`${
             hover3
               ? 'hidden'
-              : 'absolute top-[40%] left-[45%] bg-slate-100 px-6 py-2 text-[1.7rem] md:bg-opacity-90 '
+              : 'absolute top-[40%] left-[26%] bg-slate-100 px-6 py-2 text-[1.7rem] md:bg-opacity-90 '
           }`}
         >
           New Arrivals
