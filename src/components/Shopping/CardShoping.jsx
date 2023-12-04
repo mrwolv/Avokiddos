@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { CiHeart } from 'react-icons/ci';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
+import { FaEye } from 'react-icons/fa';
 
 const CardShoping = () => {
   const swiperRef = useRef();
@@ -107,20 +108,20 @@ const CardShoping = () => {
         }}
         speed={1000}
       >
-        {shoppingData.map((item) => (
+        {shoppingData.map(item => (
           <SwiperSlide
             className=' hover:cursor-pointer'
             key={item.id}
             onMouseEnter={() => handleMouseEnter(item.id)}
             onMouseLeave={handleMouseLeave}
           >
-            <figure className='relative'>
+            <figure className='relative '>
               <img src={item.imageUrl} alt={item.altText} />
             </figure>
             <div className='absolute top-[20px] right-[2.7rem]  lg:absolute lg:top-[28px] lg:right-[24px]'>
               <CiHeart className='text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer' />
             </div>
-            <div className='absolute top-[40%] left-[21%] md:absolute md:top-[40%] md:left-[10%]'>
+            {/* <div className='absolute top-[40%] left-[21%] md:absolute md:top-[40%] md:left-[10%]'>
               <button
                 className={`${
                   hoveredIndex === item.id
@@ -130,7 +131,44 @@ const CardShoping = () => {
               >
                 Add to cart
               </button>
+              <div
+                className='absolute top-[10.9rem] md:absolute md:top-[7.6rem] md:left-[10%] md:-inset-0'
+                // className='mt-[8.45rem] md:mt-[6.6rem] w-full  '
+              >
+                <button
+                  className={`${
+                    hoveredIndex === item.id
+                      ? 'border-none bg-[#EF564C] text-white md:px-12 md:py-1.5  text-[1rem] px-8 py-1 flex items-center justify-center gap-2'
+                      : 'hidden'
+                  }`}
+                >
+                  <span className=''>Quick Look</span>
+                  <FaEye />
+                </button>
+              </div>
+            </div> */}
+            <div className='absolute top-[40%] left-[19%] md:absolute md:top-[40%] md:left-[10%]'>
+              {hoveredIndex === item.id && (
+                <div className='flex flex-col items-center w-full'>
+                  <button className='border-none bg-[#EF564C] text-white md:px-8 md:py-1.5 text-[1rem] px-8 py-4 md:text-[1.1rem]'>
+                    Add to cart
+                  </button>
+                  <div className=' mt-[8.4rem] md:mt-[6.6rem]  '>
+                    <button
+                      className='border-none bg-[#EF564C] text-white md:px-8 
+                    md:py-1.5 text-[1rem] px-12 py-2 md:text-[1.1rem] flex items-center 
+                    justify-between gap-2 w-full
+                    
+                    '
+                    >
+                      <span>Quick Look</span>
+                      <FaEye className='' />
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
+
             <div className='flex flex-col items-center gap-1 mt-6'>
               <span className='text-center text-[1.1rem]'>
                 Hooded stripped shirt
