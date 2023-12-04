@@ -13,9 +13,9 @@ const ShoppingCards = () => {
         <CardShoping />
       </div>
       <div className='flex items-center justify-center text-center mt-7 md:mt-12'>
-        <button className='mt-5 relative px-12 py-2 text-white bg-[#ef564c] border-none'>
+        <button className='mt-5 relative px-8 py-1.5 md:px-12 md:py-2.5 text-white bg-[#ef564c] border-none'>
           View New Arrivals
-          <span className='absolute top-[32%] text-lg ml-4'>
+          <span className='absolute top-[32%] text-lg ml-2'>
             <IoIosArrowForward />
           </span>
         </button>
