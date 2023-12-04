@@ -7,7 +7,6 @@ import BoxContainer from '../BoxContainer';
 import ShoppingCards from '../Shopping/ShoppingCards';
 import AboutUs from '../AboutUs';
 
-
 const Header = () => {
   return (
     <div>
@@ -34,14 +33,19 @@ const Header = () => {
         </div>
       </header>
       <div className='flex items-center justify-center sm:flex '>
-        <img src='/logo.png' alt='Logo Image' width={140} className='w-[140px] h-[120px] md:w-[120px] md:h-[140px]' />
+        <img
+          src='/logo.png'
+          alt='Logo Image'
+          width={140}
+          className='w-[140px] h-[120px] md:w-[120px] md:h-[140px]'
+        />
       </div>
-      <Navbar/>
+      <Navbar />
       <ImageSlider/>
-      <HeadlineSecton/>
-      <BoxContainer/>
-      <ShoppingCards/>
-      <AboutUs/>
+      <HeadlineSecton />
+      <BoxContainer />
+      <ShoppingCards />
+      <AboutUs />
     </div>
   );
 };

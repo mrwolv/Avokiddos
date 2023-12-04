@@ -1,9 +1,8 @@
-
 const HeadlineSecton = () => {
   return (
-    <section className='bg-[#fedacd]  '>
+    <section className='bg-[#fedacd] h-[360px]'>
       <div className='flex items-center justify-between '>
-        <div className='hidden mt-8 md:flex '>
+        <div className='hidden mt-4 md:flex '>
           <img src='/Vector-5.svg' alt='' />
         </div>
         <div className='flex flex-col items-center gap-2 p-4 mt-16'>

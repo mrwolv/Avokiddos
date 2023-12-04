@@ -1,9 +1,75 @@
+/* eslint-disable react/prop-types */
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import 'swiper/css';
 import { gsap } from 'gsap';
+import 'swiper/css';
 
-const ImageSlider = () => {
+// import MobileImageComponent from './MobileImageSlider';
+// import DesktopImageSlider from './DesktopImageSlider';
+
+import { useEffect, useState } from 'react';
+
+const MainComponent = () => {
+  const data = [
+    {
+      id: 1,
+      imageUrl: '/kids.jpg',
+      mobileImageUrl: '/mobile-banner.jpg',
+      altText: 'kids',
+      description:
+        'Stylish & Comfortable Options For Your Li&apos;l One,20% Off on all orders above Rs. 999. Hurry!',
+      btn: 'Shop now'
+    },
+    {
+      id: 2,
+      imageUrl: '/kids.jpg',
+      mobileImageUrl: '/mobile-banner.jpg',
+      altText: 'kids',
+      description: 'Stylish & Comfortable Options For Your Lil',
+      discountDescription: '20% Off on all orders above Rs. 999. Hurry!',
+      btn: 'Shop now'
+    },
+    {
+      id: 3,
+      imageUrl: '/kids.jpg',
+      mobileImageUrl: '/mobile-banner.jpg',
+      altText: 'kids',
+      description: 'Stylish & Comfortable Options For Your Lil',
+      discountDescription: '20% Off on all orders above Rs. 999. Hurry!',
+      btn: 'Shop now'
+    }
+  ];
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <section className='mt-6 -mb-6'>
+      {isMobile ? (
+        <MobileImageComponent imageData={data} />
+      ) : (
+        <DesktopImageSlider imageData={data} />
+      )}
+    </section>
+  );
+};
+
+export default MainComponent;
+
+
+const DesktopImageSlider = ({ imageData }) => {
   const animateText = () =>
     gsap.fromTo(
       '.animate-text',
@@ -21,55 +87,76 @@ const ImageSlider = () => {
     );
 
   return (
-    <Swiper
-      className='mt-8 cursor-pointer md:mt-10'
-      spaceBetween={50}
-      slidesPerView={1}
-      loop={true}
-      onSlideChange={animateText}
-    >
-      <SwiperSlide className='relative hover:cursor-pointer'>
-        <img src='/kids.jpg' alt='jery' height={501} />
-        <div className=' animate-text ml-36 absolute  md:absolute text-white transform -translate-x-1/2 -translate-y-1/2 md:top-[10rem] md:left-[59rem] '>
-          <p className='text-[2.8rem] font-lovesunshine'>
-            Summer Sorbet Collection is here for your lil ones
-          </p>
-          <button className='mt-4 px-7 py-1.5 border-2 border-dashed uppercase font-semibold hover:bg-[#ff9b70]'>
-            shop now
-          </button>
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide className='cursor-pointer '>
-        <img src='/download.jpg' alt='jery' />
-        <div className=' animate-text ml-20 mt-20  absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[59rem] md:-translate-x-1/2'>
-          <p className='text-[2.8rem] font-lovesunshine'>
-            Stylish & Comfortable Options For Your Li&apos;l One
-          </p>
-          <div className='flex flex-col items-start gap-4 px-2 mt-4'>
-            <p className='slide-text'>
-              20% Off on all orders above Rs. 999. Hurry!
-            </p>
-            <button className='px-7 py-1.5 border-2 border-dashed uppercase font-semibold hover:bg-[#ff9b70]'>
-              shop now
-            </button>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className='cursor-pointer'>
-        <img src='/Header-2.jpg' alt='jery' />
-        <div
-          className='animate-text ml-52 mt-20 absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-[11rem] left-[55rem] ;
- '
-        >
-          <p className='text-[3.6rem] font-lovesunshine'>New Arrivals</p>
-          <button className=' mt-10 px-7 py-1.5 border-2 border-dashed uppercase font-semibold hover:bg-[#ff9b70]'>
-            shop now
-          </button>
-        </div>
-      </SwiperSlide>
-    </Swiper>
+    <section>
+      <Swiper slidesPerView={1} loop={true} onSlideChange={animateText}>
+        {imageData.map(item => (
+          <SwiperSlide key={item.id} className='relative'>
+            <div className='mt-20 mr-6 absolute p-4 text-white rounded-md w-[25rem] top-4 right-16 animate-text'>
+              <p className='text-[2.8rem] font-lovesunshine'>
+                Summer Sorbet Collection is here for your lil ones
+              </p>
+              <p className='text-[1rem]'>{item.discountDescription}</p>
+              <button className='mt-6 px-7 py-1.5 border-2 border-dashed uppercase font-semibold hover:bg-[#ff9b70] text-white'>
+                Shop now
+              </button>
+            </div>
+            <img src={item.imageUrl} alt={item.altText} className='w-full' />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      ;
+    </section>
   );
 };
 
-export default ImageSlider;
+
+const MobileImageComponent = ({ imageData }) => {
+  const animateText = () =>
+    gsap.fromTo(
+      '.animate-text',
+      {
+        y: '100%',
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 2.3,
+        ease: 'power3.out'
+      }
+    );
+
+  return (
+    <section>
+      <Swiper
+        slidesPerView={1}
+        loop={true}
+        onSlideChange={animateText}
+        className='mt-8 cursor-pointer'
+      >
+        {imageData.map(item => (
+          <SwiperSlide key={item.id} className='relative '>
+            <div className='absolute inset-0 flex flex-col items-center justify-center animate-text'>
+              <p className=' text-center text-white text-[2.8rem] font-lovesunshine'>
+                Summer Sorbet Collection is here for your lil ones
+              </p>
+              <p className='text-white text-[1rem]'>
+                {item.discountDescription}
+              </p>
+              <button className='mt-4 px-7 py-1.5 border-2 border-dashed uppercase font-semibold hover:bg-[#ff9b70] text-white'>
+                Shop now
+              </button>
+            </div>
+            <img
+              src={item.mobileImageUrl}
+              alt={item.altText}
+              className='w-full'
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      ;
+    </section>
+  );
+};
