@@ -1,10 +1,10 @@
 const NewsLater = () => {
   return (
     <section
-      className='md:mt-12 mt-6 bg-[#fedacd] h-[420px] md:h-[400px] 
+      className='md:mt-8 mt-6 bg-[#fedacd] h-[420px] md:h-[400px] 
     md:p-8 p-5 md:flex md:justify-around relative'
     >
-      <div className='relative flex-1 mt-6 md:mt-20'>
+      <div className='relative flex-1 mt-6 md:mt-16'>
         <img
           src='vector.svg'
           alt='vector'
@@ -23,7 +23,7 @@ const NewsLater = () => {
       </div>
       <div
         className='absolute flex flex-col items-center text-center bg-white 
-      bg-opacity-65 md:mt-[5.1rem] h-[330px] md:h-[290px] md:w-[900px] w-[320px] md:ml-11'
+      bg-opacity-65 md:mt-[4.4rem] h-[330px] md:h-[290px] md:w-[900px] w-[320px] md:ml-11'
       >
         <h1 className='text-[1.8rem] md:text-[2.3rem] mt-2 font-lovesunshine capitalize'>
           Good Stuff in Here{' '}
