@@ -4,7 +4,7 @@ const Footer = () => {
       <footer className='w-full grid gap-4  text-[#575858] md:grid-flow-col   '>
         <div className='bg-[#f7c06e] p-8 md:p-24  flex flex-col gap-8 md:flex-row md:gap-20'>
           <div>
-            <img src='/public/final-logo.png' alt='Logo' width={135} />
+            <img src='/final-logo.png' alt='Logo' width={135} />
           </div>
           <div className=''>
             <h2 className='text-[1.1rem] font-semibold uppercase'>help link</h2>

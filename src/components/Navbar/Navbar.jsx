@@ -64,8 +64,8 @@ const Navbar = () => {
         </div>
         <div className='ml-10'>
           <img
-            src='final-logo.png'
-            alt=''
+            src='/final-logo.png'
+            alt='Logo'
             className='w-[75px] md:w-[150px]'
           />
         </div>
