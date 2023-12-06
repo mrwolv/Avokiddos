@@ -1,17 +1,24 @@
-import AppLayout from './layouts/AppLayout'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import ErroPage from './pages/ErroPage'
-import Shop from './pages/Shop'
-import 'animate.css'
+import PageLayout from './layouts/PageLayout'
 
+/* Pages to  show */
+import Home from './pages/Home'
+import Shop from './pages/ShopPage'
+import ErroPage from './pages/ErroPage'
 
 const App = () => {
     return (
         <div className='h-full'>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/' element={<AppLayout />} />
-                    <Route path='/shop' element={<Shop />} />
+                    <Route
+                        path='/'
+                        element={<PageLayout content={<Home />} />}
+                    />
+                    <Route
+                        path='/shop'
+                        element={<PageLayout content={<Shop />} />}
+                    />
                     <Route path='/*' element={<ErroPage />} />
                 </Routes>
             </BrowserRouter>

@@ -4,7 +4,7 @@ import { CiHeart } from 'react-icons/ci'
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 import { FaEye } from 'react-icons/fa'
 
-const CardShoping = () => {
+const CardShoping = ({btnTitle}) => {
     const swiperRef = useRef()
     const [slidesPerView, setSlidesPerView] = useState(4)
     const [slidesPerGroup, setSlidesPerGroup] = useState(1)
@@ -123,7 +123,7 @@ const CardShoping = () => {
                             {hoveredIndex === item.id && (
                                 <div className="flex flex-col items-center w-full">
                                     <button className="border-none bg-[#EF564C] text-white md:px-8 md:py-1.5 text-[1rem] px-8 py-4 md:text-[1.1rem]">
-                                        Add to cart
+                                        {btnTitle}
                                     </button>
                                     <div className=" mt-[8.4rem] md:mt-[6.9rem]  ">
                                         <button
