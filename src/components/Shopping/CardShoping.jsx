@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useRef, useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { CiHeart } from 'react-icons/ci'
@@ -115,8 +116,8 @@ const CardShoping = ({btnTitle}) => {
                         <figure className="relative">
                             <img src={item.imageUrl} alt={item.altText} />
                         </figure>
-                        <div className="absolute top-[20px] right-[2.7rem]  md:absolute md:top-[28px] md:right-[24px] ">
-                            <CiHeart className="text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer max-[600px]:text-sky-300" />
+                        <div className="absolute top-[20px] right-[1.5rem]  md:absolute md:top-[28px] md:right-[24px] ">
+                            <CiHeart className="text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer " />
                         </div>
 
                         <div className="absolute top-[41%] left-0 md:absolute md:top-[40%] md:left-[.3%]">
