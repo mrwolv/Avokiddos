@@ -48,9 +48,9 @@ const BoxContainer = () => {
     )
 
     return (
-        <section className='grid md:grid-cols-3 hover:cursor-pointer '>
+        <section className="grid md:grid-cols-3 hover:cursor-pointer ">
             <div
-                className='relative'
+                className="relative"
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
             >
@@ -66,9 +66,9 @@ const BoxContainer = () => {
                     </span>
 
                     <img
-                        src='kid1.jpg'
-                        alt='kid1'
-                        className='mx-auto md:w-full md:h-auto '
+                        src="kid1.jpg"
+                        alt="kid1"
+                        className="mx-auto md:w-full md:h-auto "
                     />
                     {/* Putting text here and animation */}
                     <div
@@ -78,11 +78,11 @@ const BoxContainer = () => {
                                 : 'hidden'
                         }`}
                     >
-                        <div className='absolute text-white top-[40%] left-[34%] flex flex-col gap-1 '>
-                            <span className='text-[2.1rem] text-center'>
+                        <div className="absolute text-white top-[40%] left-[34%] flex flex-col gap-1 ">
+                            <span className="text-[2.1rem] text-center">
                                 Boys Fashion
                             </span>
-                            <span className='text-[1.2rem] text-center'>
+                            <span className="text-[1.2rem] text-center">
                                 Explore more &#10095;{' '}
                             </span>
                         </div>
@@ -92,7 +92,7 @@ const BoxContainer = () => {
 
             {/* Secoond headimages */}
             <div
-                className='relative'
+                className="relative"
                 onMouseEnter={() => setHover2(true)}
                 onMouseLeave={() => setHover2(false)}
             >
@@ -107,9 +107,9 @@ const BoxContainer = () => {
                 </span>
 
                 <img
-                    src='kid2.jpg'
-                    alt='kid1'
-                    className='mx-auto md:w-full md:h-auto '
+                    src="kid2.jpg"
+                    alt="kid1"
+                    className="mx-auto md:w-full md:h-auto "
                 />
                 {/* Putting girls animation  */}
                 <div
@@ -119,18 +119,18 @@ const BoxContainer = () => {
                             : 'hidden'
                     }`}
                 >
-                    <div className='absolute text-white top-[40%] left-[34%] flex flex-col gap-1 '>
-                        <span className='text-[2.1rem] text-center'>
+                    <div className="absolute text-white top-[40%] left-[34%] flex flex-col gap-1 ">
+                        <span className="text-[2.1rem] text-center">
                             Girls Fashion
                         </span>
-                        <span className='text-[1.2rem] text-center'>
+                        <span className="text-[1.2rem] text-center">
                             Explore more &#10095;{' '}
                         </span>
                     </div>
                 </div>
             </div>
             <div
-                className='relative'
+                className="relative"
                 onMouseEnter={() => setHover3(true)}
                 onMouseLeave={() => setHover3(false)}
             >
@@ -145,12 +145,12 @@ const BoxContainer = () => {
                 </span>
 
                 <img
-                    src='kid3.jpg'
-                    alt='kid1'
-                    className='mx-auto md:w-full md:h-auto '
+                    src="kid3.jpg"
+                    alt="kid1"
+                    className="mx-auto md:w-full md:h-auto "
                 />
                 {/* Putting new arrivals animation  */}
-                <div className=''>
+                <div className="">
                     <div
                         className={` animate__animated animate__slideInRight  ${
                             hover3
@@ -158,11 +158,11 @@ const BoxContainer = () => {
                                 : 'hidden'
                         }`}
                     >
-                        <div className='absolute text-white top-[40%] left-[32%] flex flex-col gap-1 -z-10 '>
-                            <span className='text-[2.1rem] text-center'>
+                        <div className="absolute text-white top-[40%] left-[32%] flex flex-col gap-1 -z-10 ">
+                            <span className="text-[2.1rem] text-center">
                                 New Arrivals
                             </span>
-                            <span className='text-[1.2rem] text-center '>
+                            <span className="text-[1.2rem] text-center ">
                                 Explore more &#10095;{' '}
                             </span>
                         </div>

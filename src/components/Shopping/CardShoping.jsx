@@ -10,7 +10,7 @@ const CardShoping = () => {
     const [slidesPerGroup, setSlidesPerGroup] = useState(1)
     const [hoveredIndex, setHoveredIndex] = useState(null)
 
-    const handleMouseEnter = index => {
+    const handleMouseEnter = (index) => {
         setHoveredIndex(index)
     }
 
@@ -88,10 +88,10 @@ const CardShoping = () => {
     ]
 
     return (
-        <article className='flex items-center justify-between px-4 mt-8 md:px-28 md:mt-20 md:gap-8'>
+        <article className="flex items-center justify-between px-4 mt-8 md:px-28 md:mt-20 md:gap-8">
             <span>
                 <IoIosArrowBack
-                    className='text-lg hover:cursor-pointer'
+                    className="text-lg hover:cursor-pointer"
                     onClick={handlePrev}
                 />
             </span>
@@ -100,53 +100,53 @@ const CardShoping = () => {
                 spaceBetween={60}
                 slidesPerView={slidesPerView}
                 loop={true}
-                onSwiper={swiper => {
+                onSwiper={(swiper) => {
                     swiperRef.current = swiper
                 }}
                 speed={1000}
             >
-                {shoppingData.map(item => (
+                {shoppingData.map((item) => (
                     <SwiperSlide
-                        className=' hover:cursor-pointer'
+                        className=" hover:cursor-pointer"
                         key={item.id}
                         onMouseEnter={() => handleMouseEnter(item.id)}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <figure className='relative'>
+                        <figure className="relative">
                             <img src={item.imageUrl} alt={item.altText} />
                         </figure>
-                        <div className='absolute top-[20px] right-[2.7rem]  md:absolute md:top-[28px] md:right-[24px] '>
-                            <CiHeart className='text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer max-[600px]:text-sky-300' />
+                        <div className="absolute top-[20px] right-[2.7rem]  md:absolute md:top-[28px] md:right-[24px] ">
+                            <CiHeart className="text-[23px] font-semibold hover:text-red-400 hover:cursor-pointer max-[600px]:text-sky-300" />
                         </div>
 
-                        <div className='absolute top-[41%] left-0 md:absolute md:top-[40%] md:left-[.3%]'>
+                        <div className="absolute top-[41%] left-0 md:absolute md:top-[40%] md:left-[.3%]">
                             {hoveredIndex === item.id && (
-                                <div className='flex flex-col items-center w-full'>
-                                    <button className='border-none bg-[#EF564C] text-white md:px-8 md:py-1.5 text-[1rem] px-8 py-4 md:text-[1.1rem]'>
+                                <div className="flex flex-col items-center w-full">
+                                    <button className="border-none bg-[#EF564C] text-white md:px-8 md:py-1.5 text-[1rem] px-8 py-4 md:text-[1.1rem]">
                                         Add to cart
                                     </button>
-                                    <div className=' mt-[8.4rem] md:mt-[6.9rem]  '>
+                                    <div className=" mt-[8.4rem] md:mt-[6.9rem]  ">
                                         <button
-                                            className='border-none bg-[#EF564C] text-white md:px-[2.6rem] md:pr-[52px] 
+                                            className="border-none bg-[#EF564C] text-white md:px-[2.6rem] md:pr-[52px] 
                                             md:py-[3px] text-[1rem] px-12 py-2 md:text-[1rem] flex items-center 
-                                           justify-between gap-2 w-full'
+                                           justify-between gap-2 w-full"
                                         >
-                                            <p className='px-1 md:w-[7.4rem] w-[11rem]'>
+                                            <p className="px-1 md:w-[7.4rem] w-[11rem]">
                                                 Quick Look
                                             </p>
-                                            <FaEye className='' />
+                                            <FaEye className="" />
                                         </button>
                                     </div>
                                 </div>
                             )}
                         </div>
 
-                        <div className='flex flex-col items-center gap-1 mt-6'>
-                            <span className='text-center text-[1.1rem]'>
+                        <div className="flex flex-col items-center gap-1 mt-6">
+                            <span className="text-center text-[1.1rem]">
                                 Hooded stripped shirt
                             </span>
-                            <span className='flex gap-3'>
-                                <span className='text-center font-bold text-[1rem]'>
+                            <span className="flex gap-3">
+                                <span className="text-center font-bold text-[1rem]">
                                     &#8377; 1,550.00
                                 </span>
                             </span>
@@ -157,7 +157,7 @@ const CardShoping = () => {
 
             <span>
                 <IoIosArrowForward
-                    className='text-lg hover:cursor-pointer'
+                    className="text-lg hover:cursor-pointer"
                     onClick={handleNext}
                 />
             </span>
