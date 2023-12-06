@@ -41,9 +41,6 @@ const CardShoping = () => {
         }
     }, [])
 
-    // Use slidesPerView and slidesPerGroup in your component
-    // ...
-
     const handleNext = () => {
         swiperRef.current.slideNext()
     }
@@ -107,7 +104,6 @@ const CardShoping = () => {
                     swiperRef.current = swiper
                 }}
                 speed={1000}
-                
             >
                 {shoppingData.map(item => (
                     <SwiperSlide
@@ -132,10 +128,8 @@ const CardShoping = () => {
                                     <div className=' mt-[8.4rem] md:mt-[6.9rem]  '>
                                         <button
                                             className='border-none bg-[#EF564C] text-white md:px-[2.6rem] md:pr-[52px] 
-                    md:py-[3px] text-[1rem] px-12 py-2 md:text-[1rem] flex items-center 
-                    justify-between gap-2 w-full
-                    
-                    '
+                                            md:py-[3px] text-[1rem] px-12 py-2 md:text-[1rem] flex items-center 
+                                           justify-between gap-2 w-full'
                                         >
                                             <p className='px-1 md:w-[7.4rem] w-[11rem]'>
                                                 Quick Look
