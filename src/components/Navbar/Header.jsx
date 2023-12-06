@@ -1,14 +1,6 @@
 import { CiMail, CiFacebook } from 'react-icons/ci';
 import { FaPhone, FaInstagram } from 'react-icons/fa6';
-import Navbar from './Navbar';
-import ImageSlider from '../Slider/ImageSlider';
-import HeadlineSecton from '../HeadlineSecton';
-import BoxContainer from '../BoxContainer';
-import ShoppingCards from '../Shopping/ShoppingCards';
-import AboutUs from '../AboutUs';
-import Testimonials from '../Testimonial/Testimonials';
-import NewsLater from '../NewsLater';
-import Footer from '../Footer';
+
 
 const Header = () => {
   return (
@@ -17,7 +9,7 @@ const Header = () => {
         <div className='hidden gap-8 cursor-pointer sm:flex sm:items-center '>
           <div className='sm:flex sm:items-center '>
             <CiMail size={18} />
-            <span>helpdesk@avokiddos.in</span>
+            <span className=''>helpdesk@avokiddos.in</span>
           </div>
           <div className='sm:flex sm:items-center'>
             <span>
@@ -36,16 +28,7 @@ const Header = () => {
         </div>
       </header>
       
-      <Navbar />
-      <ImageSlider/>
-      <HeadlineSecton />
-      <BoxContainer />
-      <ShoppingCards />
-      <AboutUs />
-      <Testimonials/>
-      <ShoppingCards />;
-      <NewsLater/>
-      <Footer/>
+    
     </div>
   );
 };

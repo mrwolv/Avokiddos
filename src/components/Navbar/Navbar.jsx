@@ -63,6 +63,7 @@ const Navbar = () => {
         <MobileDrawer
           handleInputChange={handleInputChange}
           isLabelHidden={isLabelHidden}
+         
         />
 
         {/* Desktop  */}
