@@ -5,7 +5,7 @@ const Products = ({ products }) => {
     console.log(products)
 
     return (
-        <section className='grid grid-cols-2 gap-6 grid-flow-rows md:grid-cols-3 '>
+        <section className='grid grid-cols-2 gap-6 cursor-pointer grid-flow-rows md:grid-cols-3'>
             {products.map(product => (
                 <div
                     key={product.id}
@@ -27,7 +27,12 @@ const Products = ({ products }) => {
                             description
                         </span>
                         <span className='text-[.8rem]'>
-                            <Rate allowHalf allowClear />  {product.rating.rate}
+                            <Rate
+                                allowHalf
+                                allowClear
+                                className='text-[.9rem] md:text[1.1rem]'
+                            />{' '}
+                            {product.rating.rate}
                         </span>
                         <span className='mt-2 text-[1.1rem] font-semibold'>
                             &#8377; 2,379

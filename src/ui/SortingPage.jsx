@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Breadcrumb } from 'antd'
 
+
 const SortingPage = ({ resultCount }) => {
     const sortingOptions = [
         { id: 1, title: 'Default Sorting' },
@@ -28,7 +29,7 @@ const SortingPage = ({ resultCount }) => {
 
                 <select
                     className='ouline outline-1   border-none md:py-2 md:px-3 bg-transparent 
-                    text-[.6rem] md:text-[1rem] font-barlow'
+                    text-[.6rem] md:text-[1rem] font-barlow cursor-pointer'
                 >
                     {sortingOptions.map(option => (
                         <option key={option.id} value={option.title}>
