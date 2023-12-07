@@ -5,7 +5,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        lovesunshine: ['lovesunshine', 'sans-serif']
+        lovesunshine: ['lovesunshine', 'sans-serif'],
+        barlow:['Barlow', 'sans-serif'],
+        Inter:['Inter', 'sans-serif'],
       },
       'testimonial-bg': "url('/public/testimonial-background.jpg')"
     }

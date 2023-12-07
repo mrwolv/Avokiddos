@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
+import ShopPageHeader from '../components/PageHeaders'
+import SortingPage from '../ui/SortingPage'
+
 const Shop = () => {
     // eslint-disable-next-line no-unused-vars
     const [products, setProducts] = useState([])
@@ -12,10 +15,13 @@ const Shop = () => {
         getProducts()
     }, [])
 
+    const resultCount = products.length
+    console.log(resultCount)
     return (
         <>
-            <section className='flex items-center justify-center h-96'>
-                <h1>This is Shop Page</h1>
+            <section className=''>
+                <ShopPageHeader />
+                <SortingPage resultCount={resultCount} />
             </section>
         </>
     )
