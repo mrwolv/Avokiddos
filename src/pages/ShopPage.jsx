@@ -24,7 +24,7 @@ const Shop = () => {
             <section className=''>
                 <ShopPageHeader />
                 <SortingPage resultCount={resultCount} />
-                <div className='flex flex-wrap items-center justify-start p-2 md:justify-around md:flex md:flex-nowrap '>
+                <div className='flex flex-wrap items-start justify-start p-2 md:justify-around md:flex md:flex-nowrap '>
                     <FilterShopping />
                     <Products  products={products}/>
                 </div>
