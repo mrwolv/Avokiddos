@@ -10,7 +10,8 @@ const Products = () => {
     const { currentItems, handlePageClick, pageCount } = useShopContext()
 
     return (
-            {currentProducts &&
+        <main>
+            <section className='grid grid-cols-2 cursor-pointer gap-7 grid-flow-rows md:grid-cols-3'>
                 {currentItems.map(product => (
                     <div
                         key={product.id}
