@@ -5,6 +5,8 @@ import PageLayout from './layouts/PageLayout'
 import Home from './pages/Home'
 import Shop from './pages/ShopPage'
 import ErroPage from './pages/ErroPage'
+import BoysShop from './pages/BoysShop'
+import GirlsShop from './pages/GirlsShop'
 
 const App = () => {
     return (
@@ -18,6 +20,14 @@ const App = () => {
                     <Route
                         path='/shop'
                         element={<PageLayout content={<Shop />} />}
+                    />
+                    <Route
+                        path='/boys-shop'
+                        element={<PageLayout content={<BoysShop />} />}
+                    />
+                    <Route
+                        path='/girls-shop'
+                        element={<PageLayout content={<GirlsShop />} />}
                     />
                     <Route path='/*' element={<ErroPage />} />
                 </Routes>

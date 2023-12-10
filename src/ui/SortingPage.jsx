@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Breadcrumb } from 'antd'
 
-
-const SortingPage = ({ resultCount }) => {
+const SortingPage = ({ resultCount, itemsPerPage }) => {
     const sortingOptions = [
         { id: 1, title: 'Default Sorting' },
         { id: 1, title: 'Sort By Popularity' },
@@ -14,7 +13,7 @@ const SortingPage = ({ resultCount }) => {
     return (
         <div className='flex items-center justify-between h-20 p-5 mt-4 bg-slate-100 md:px-16 md:py-8 md:mx-20 md:my-8'>
             <h1 className='text-[.7rem] md:text-[1rem] font-barlow'>
-                Showing 1–{resultCount} of {resultCount} results
+                Showing 1–{itemsPerPage} of {resultCount} results
             </h1>
             <div className='flex items-center gap-8 '>
                 <Breadcrumb

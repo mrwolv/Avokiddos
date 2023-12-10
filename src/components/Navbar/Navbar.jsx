@@ -8,7 +8,6 @@ import { Dropdown, Menu, Space } from 'antd'
 import MobileDrawer from '../MobileDrawer/MobileDrawer'
 import { Link } from 'react-router-dom'
 
-
 const Navbar = () => {
     const [isLabelHidden, setIsLabelHidden] = useState(false)
 
@@ -69,7 +68,6 @@ const Navbar = () => {
 
                 {/* Desktop  */}
 
-               
                 <div className='ml-10'>
                     <img
                         src='/final-logo.png'
@@ -100,7 +98,7 @@ const Navbar = () => {
                                     <div className='mb-4 cursor-pointer bg-red'>
                                         <FaSearch className='absolute right-2 text-[#419e7d] hover:bg-[#fedacd]' />
                                     </div>
-                                </div>  
+                                </div>
                             </div>
                         </form>
                         <div className='md:justify-between md:items-center md:flex '>
@@ -118,11 +116,16 @@ const Navbar = () => {
                                 </Link>
                                 <li className='hover:text-red-400'>
                                     <Dropdown overlay={boysMenu}>
-                                        <a onClick={e => e.preventDefault()}>
-                                            <Space>
-                                                Boys
-                                                <DownOutlined className='text-xs' />
-                                            </Space>
+                                        <a
+                                            to='/boys-shop'
+                                            onClick={e => e.preventDefault()}
+                                        >
+                                            <Link to='boys-shop'>
+                                                <Space>
+                                                    Boys
+                                                    <DownOutlined className='text-xs' />
+                                                </Space>
+                                            </Link>
                                         </a>
                                     </Dropdown>
                                 </li>
@@ -130,15 +133,21 @@ const Navbar = () => {
                                 <li className='hover:text-red-400'>
                                     <Dropdown overlay={girlsMenu}>
                                         <a onClick={e => e.preventDefault()}>
-                                            <Space>
-                                                Girls
-                                                <DownOutlined className='text-xs' />
-                                            </Space>
+                                            <Link to='girls-shop'>
+                                                <Space>
+                                                    Girls
+                                                    <DownOutlined className='text-xs' />
+                                                </Space>
+                                            </Link>
                                         </a>
                                     </Dropdown>
                                 </li>
-                                <li className='hover:text-red-400'>About</li>
-                                <li className='hover:text-red-400'>Contacts</li>
+                                <li className='hover:text-red-400'>
+                                    <Link to='about'>About</Link>
+                                </li>
+                                <li className='hover:text-red-400'>
+                                    <Link to='contact'>Contact</Link>
+                                </li>
                             </ul>
                         </div>
                     </div>

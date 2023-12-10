@@ -1,17 +1,47 @@
 import { Collapse, Slider } from 'antd'
 import { useState } from 'react'
+import {colors} from '../../constants/constant'
+import {sizes} from '../../constants/constant'
 
 const { Panel } = Collapse
 
 const FilterShopping = () => {
     const [inputValue, setInputValue] = useState(0)
-    const [isChecked, setIsChecked] = useState(false)
+    // // const [isChecked, setIsChecked] = useState(false)
+    // const [checkedItems, setCheckedItems] = useState({})
 
-    const handleCheckboxClick = () => {
-        // Toggle the state of the checkbox when the custom element is clicked
-        console.log('first')
-        setIsChecked(!isChecked)
-    }
+    // const handleCheckboxClick = key => {
+    //     setCheckedItems(prevCheckedItems => ({
+    //         ...prevCheckedItems,
+    //         [key]: !prevCheckedItems[key],
+    //     }))
+    // }
+
+    /* Making a checkbox Compoent for the checkbox */
+    const CheckBox = () => (
+        <label className='relative flex items-center rounded-md cursor-pointer'>
+            <input
+                type='checkbox'
+                className='relative w-4 h-4 transition-all border-2 border-orange-400 appearance-none cursor-pointer peer bg-orange-900/25 dark:bg-gray-100/25 dark:border-orange-500 checked:border-red-500 checked:bg-red-500'
+            />
+            <div className='absolute text-white transition-opacity -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none top-1/2 left-1/2 peer-checked:opacity-100'>
+                <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-3.5 w-3.5'
+                    viewBox='0 0 20 20'
+                    fill='currentColor'
+                    stroke='currentColor'
+                    strokeWidth='1'
+                >
+                    <path
+                        fillRule='evenodd'
+                        d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
+                        clipRule='evenodd'
+                    ></path>
+                </svg>
+            </div>
+        </label>
+    )
 
     const onChange = newValue => {
         setInputValue(newValue)
@@ -20,50 +50,34 @@ const FilterShopping = () => {
     function handleReset () {
         setInputValue(0)
     }
-    /* Component to show the girls Item  for filters
-     */
+    /* Component to show the girls Item  for filters */
     const girlsItem = (
         <>
             <div className='flex flex-col justify-center gap-4 ml-2 text-[.9rem]'>
                 <div className='flex items-center gap-2'>
-                    <input
-                        type='checkbox'
-                        className='w-3.5 h-3.5 border-2 border-red-500 appearance-none'
-                    />
+                    <CheckBox />
 
                     <span>Co-ord sets</span>
                 </div>
 
                 <div className='flex items-center gap-2 '>
-                    <input
-                        type='checkbox'
-                        className='w-3.5 h-3.5 border-2 border-red-500 appearance-none'
-                    />
+                    <CheckBox />
 
                     <span>Dresses</span>
                 </div>
                 <div className='flex items-center gap-2 '>
-                    <input
-                        type='checkbox'
-                        className='w-3.5 h-3.5 border-2 border-red-500 appearance-none'
-                    />
+                    <CheckBox />
 
                     <span>Jackets</span>
                 </div>
 
                 <div className='flex items-center gap-2'>
-                    <input
-                        type='checkbox'
-                        className='w-3.5 h-3.5 border-2 border-red-500 appearance-none'
-                    />
+                    <CheckBox />
 
                     <span>Shirts</span>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <input
-                        type='checkbox'
-                        className='w-3.5 h-3.5 border-2 border-red-500 appearance-none'
-                    />
+                    <CheckBox />
 
                     <span>Winter Wear</span>
                 </div>
@@ -76,37 +90,21 @@ const FilterShopping = () => {
         <>
             <div className='flex flex-col justify-center gap-4 ml-2 text-[.9rem]'>
                 <div className='flex items-center gap-2'>
-                    <input
-                        type='checkbox'
-                        className='w-3.5 h-3.5 border-2 border-red-500 appearance-none'
-                    />
-
+                    <CheckBox />
                     <span>Co-ord sets</span>
                 </div>
 
                 <div className='flex items-center gap-2 '>
-                    <input
-                        type='checkbox'
-                        className='w-3.5 h-3.5 border-2 border-red-500 appearance-none'
-                    />
-
+                    <CheckBox />
                     <span>Playsuits and Playsets</span>
                 </div>
                 <div className='flex items-center gap-2 '>
-                    <input
-                        type='checkbox'
-                        className='w-3.5 h-3.5 border-2 border-red-500 appearance-none'
-                    />
-
+                    <CheckBox />
                     <span>Shirts</span>
                 </div>
 
                 <div className='flex items-center gap-2'>
-                    <input
-                        type='checkbox'
-                        className='w-3.5 h-3.5 border-2 border-red-500 appearance-none'
-                    />
-
+                    <CheckBox />
                     <span>Winter wear</span>
                 </div>
             </div>
@@ -126,6 +124,35 @@ const FilterShopping = () => {
             children: girlsItem,
         },
     ]
+
+  
+    const Colors = () => (        
+    <div className='mt-4'>
+            <h2 className=' font-barlow  text-[1.5rem]  mb-1.5 text-[#365644] '>
+                Colors
+            </h2>
+            {colors.map(color => (
+                <div className='flex items-center gap-4' key={color.id}>
+                    <CheckBox/>
+                    {color.name}
+                </div>
+            ))}
+        </div>
+    )
+    
+    const Sizes = () => (        
+    <div className='mt-4'>
+            <h2 className='font-barlow  text-[1.5rem]  mb-1.5 text-[#365644] '>
+                Sizes
+            </h2>
+            {sizes.map(size => (
+                <div className='flex items-center gap-4' key={size.id}>
+                    <CheckBox/>
+                    {size.name}
+                </div>
+            ))}
+        </div>
+    )
 
     return (
         <div className='mb-4 md:mb-0 '>
@@ -156,6 +183,7 @@ const FilterShopping = () => {
                         </button>
                     </div>
                 </div>
+                {/* This is for the boys and girls items to show  */}
                 <div className='mt-4'>
                     <h2 className='font-barlow  text-[1.5rem]  mb-1.5 text-[#365644] '>
                         Categories
@@ -164,15 +192,33 @@ const FilterShopping = () => {
                         {items.map(item => (
                             <Panel
                                 header={
-                                    <div className='flex items-center gap-4 text-[.9rem] '>
-                                        <div>
-                                            {/* Hidden checkbox */}
+                                    <div
+                                        className='flex items-center gap-4 text-[.9rem] relative'
+                                        key={item.key}
+                                    >
+                                        {/* <div>
+                                          
                                             <input
                                                 type='checkbox'
-                                                className={`w-3.5 h-3.5 border-2 border-red-500 appearance-none cursor-pointer`}
+                                                value={item.label}
+                                                onChange={() =>
+                                                    handleCheckboxClick(
+                                                        item.key
+                                                    )
+                                                }
+                                                className={`relative w-3.5 h-3.5 border-2 border-red-500 appearance-none cursor-pointer ${
+                                                    checkedItems[item.key]
+                                                        ? ''
+                                                        : 'bg-red-500 '
+                                                }}`}
                                             />
+                                        </div> */}
+                                        <div className='flex items-center w-full gap-6 '>
+                                            <CheckBox />
+                                            <span className='hover:text-[#075fcb] text-[1rem]'>
+                                                {item.label}
+                                            </span>
                                         </div>
-                                        <span>{item.label}</span>
                                     </div>
                                 }
                                 key={item.key}
@@ -182,6 +228,10 @@ const FilterShopping = () => {
                         ))}
                     </Collapse>
                 </div>
+
+                {/* Colors list */}
+                <Colors/>
+                <Sizes/>
             </div>
         </div>
     )
