@@ -1,19 +1,22 @@
 /* eslint-disable react/prop-types */
 import { Breadcrumb } from 'antd'
+import { useShopContext } from '../contexts/useShopContext'
 
-const SortingPage = ({ resultCount, itemsPerPage }) => {
+const SortingPage = () => {
     const sortingOptions = [
         { id: 1, title: 'Default Sorting' },
-        { id: 1, title: 'Sort By Popularity' },
-        { id: 1, title: 'Sort by Latest' },
-        { id: 1, title: 'Sort By Price : Hight to Low' },
-        { id: 1, title: 'Sort By Price : Low to High' },
+        { id: 2, title: 'Sort By Popularity' },
+        { id: 3, title: 'Sort by Latest' },
+        { id: 4, title: 'Sort By Price : Hight to Low' },
+        { id: 5, title: 'Sort By Price : Low to High' },
     ]
+
+    const { resultCount, itemOffset } = useShopContext()
 
     return (
         <div className='flex items-center justify-between h-20 p-5 mt-4 bg-slate-100 md:px-16 md:py-8 md:mx-20 md:my-8'>
             <h1 className='text-[.7rem] md:text-[1rem] font-barlow'>
-                Showing 1–{itemsPerPage} of {resultCount} results
+                Showing 1 – {itemOffset} of {resultCount} results
             </h1>
             <div className='flex items-center gap-8 '>
                 <Breadcrumb

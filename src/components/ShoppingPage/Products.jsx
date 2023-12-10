@@ -1,23 +1,22 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Pagination, Rate } from 'antd'
-import { useState } from 'react'
+import { Rate } from 'antd'
 import ReactPaginate from 'react-paginate'
+import { useShopContext } from '../../contexts/useShopContext'
 
-const Products = ({
-    currentProducts,
+const Products = () => {
     
-}) => {
-   
+    /* Providing data from context */
+    const { currentItems, handlePageClick, pageCount } = useShopContext()
+
     return (
-        <section className='grid grid-cols-2 cursor-pointer gap-7 grid-flow-rows md:grid-cols-3'>
             {currentProducts &&
-                currentProducts.map(product => (
+                {currentItems.map(product => (
                     <div
-                        key={product.category.id}
+                        key={product.id}
                         className='flex flex-col items-center justify-center'
                     >
-                        <div className=''>
+                        <div className='' key={product.category.id}>
                             <img
                                 src={product.category.image}
                                 alt='kid image'
@@ -46,10 +45,27 @@ const Products = ({
                         </div>
                     </div>
                 ))}
-            <div className='flex justify-center mt-4'>
-                {/* <Pagination defaultCurrent={current} total={nPages} /> */}
+            </section>
+            {/* Pagination  */}
+            <div className='flex items-start justify-center gap-3 p-2 mt-8 mb-7 '>
+                <ReactPaginate
+                    className='flex items-center justify-center gap-4'
+                    breakLabel='...'
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={3}
+                    pageCount={pageCount}
+                    renderOnZeroPageCount={null}
+                    containerClassName='pagination'
+                    pageLinkClassName='page-num rounded-full border hover:border-gray-500 w-3 h-3 px-3.5 py-2 hover:bg-gray-200 hover:text-black'
+                    activeLinkClassName='active rounded-full border hover:border-gray-500 w-3 h-3 px-3.5 py-2 hover:bg-gray-200 hover:text-black '
+                    pageClassName='page-item '
+                    nextLabel='>'
+                    previousLabel='<'
+                    previousLinkClassName='page-num rounded-full border hover:border-gray-500 w-3 h-3 px-3.5 py-2 hover:bg-gray-200 hover:text-black'
+                    nextLinkClassName='page-num rounded-full border hover:border-gray-500 w-3 h-3 px-3.5 py-2 hover:bg-gray-200 hover:text-black'
+                />
             </div>
-        </section>
+        </main>
     )
 }
 
