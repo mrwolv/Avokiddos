@@ -1,51 +1,52 @@
 import { useState } from 'react'
-import { gsap } from 'gsap'
+// import { gsap } from 'gsap'
 
 const BoxContainer = () => {
     const [hover, setHover] = useState(false)
     const [hover2, setHover2] = useState(false)
     const [hover3, setHover3] = useState(false)
 
-    gsap.fromTo(
-        '.animate-text',
-        {
-            translateY: '-100%', // Start from the top of the div
-            opacity: 0,
-        },
-        {
-            translateY: '0%', // End at the original position
-            opacity: 1,
-            duration: 2.3,
-            ease: 'power3.out',
-        }
-    )
+    // /* Gsap Animation */
+    // gsap.fromTo(
+    //     '.animate-text',
+    //     {
+    //         translateY: '-100%', // Start from the top of the div
+    //         opacity: 0,
+    //     },
+    //     {
+    //         translateY: '0%', // End at the original position
+    //         opacity: 1,
+    //         duration: 2.3,
+    //         ease: 'power3.out',
+    //     }
+    // )
 
-    gsap.fromTo(
-        '.girls-animation-text',
-        {
-            scale: 0,
-        },
-        {
-            scale: 1,
-            opacity: 1,
-            duration: 1.7,
-            ease: 'power2.inOut',
-        }
-    )
+    // gsap.fromTo(
+    //     '.girls-animation-text',
+    //     {
+    //         scale: 0,
+    //     },
+    //     {
+    //         scale: 1,
+    //         opacity: 1,
+    //         duration: 1.7,
+    //         ease: 'power2.inOut',
+    //     }
+    // )
 
-    gsap.fromTo(
-        '.new-arrival-animation-text',
-        {
-            y: '-100%', // Start from the top of the div
-            opacity: 0,
-        },
-        {
-            y: '0%', // End at the original position
-            opacity: 1,
-            duration: 2.3,
-            ease: 'power3.out',
-        }
-    )
+    // gsap.fromTo(
+    //     '.new-arrival-animation-text',
+    //     {
+    //         y: '-100%', // Start from the top of the div
+    //         opacity: 0,
+    //     },
+    //     {
+    //         y: '0%', // End at the original position
+    //         opacity: 1,
+    //         duration: 2.3,
+    //         ease: 'power3.out',
+    //     }
+    // )
 
     return (
         <section className='grid md:grid-cols-3 hover:cursor-pointer '>
@@ -96,7 +97,7 @@ const BoxContainer = () => {
                 </div>
             </div>
 
-            {/* Secoond headimages */}
+            {/* Second headimages */}
             <div
                 className='relative'
                 onMouseEnter={() => setHover2(true)}
@@ -118,6 +119,7 @@ const BoxContainer = () => {
                     className='mx-auto md:w-full md:h-auto '
                 />
                 {/* Putting girls animation  */}
+                
                 <div
                     className={`${
                         hover2
@@ -156,6 +158,7 @@ const BoxContainer = () => {
                     className='mx-auto md:w-full md:h-auto '
                 />
                 {/* Putting new arrivals animation  */}
+                
                 <div className=''>
                     <div
                         className={` animate__animated animate__slideInRight  ${
