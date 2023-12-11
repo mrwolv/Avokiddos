@@ -7,6 +7,7 @@ import { DownOutlined } from '@ant-design/icons'
 import { Dropdown, Menu, Space } from 'antd'
 import MobileDrawer from '../MobileDrawer/MobileDrawer'
 import { Link } from 'react-router-dom'
+import { boysItems,girlsItems } from '../../constants/constant'
 
 const Navbar = () => {
     const [isLabelHidden, setIsLabelHidden] = useState(false)
@@ -22,21 +23,9 @@ const Navbar = () => {
         alert(`Selected: ${key}`)
     }
 
-    const boysItems = [
-        { label: 'All Boys', key: '1' },
-        { label: 'PlaySuits and Playsets', key: '2' },
-        { label: 'Shirts', key: '3' },
-        { label: 'Winter Wear', key: '4' },
-    ]
+   
 
-    const girlsItems = [
-        { label: 'All Girls', key: '1' },
-        { label: 'PlaySuits and Playsets', key: '2' },
-        { label: 'Dresses', key: '3' },
-        { label: 'Winter Wear', key: '4' },
-    ]
-
-    /*boys menu to fetch the boys dropdown */ const boysMenu = (
+   const boysMenu = (
         <Menu
             onClick={onClick}
             className='px-12 border border-gray-300 rounded shadow-lg w-50 hover:text-red-400 '

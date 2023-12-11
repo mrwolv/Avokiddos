@@ -50,3 +50,17 @@ export const sizes = [
     { id: 5, name: '6-7 Yrs' },
     { id: 6, name: '7-8 Yrs' },
 ]
+
+export const boysItems = [
+    { label: 'All Boys', key: '1' },
+    { label: 'PlaySuits and Playsets', key: '2' },
+    { label: 'Shirts', key: '3' },
+    { label: 'Winter Wear', key: '4' },
+]
+
+export const girlsItems = [
+    { label: 'All Girls', key: '1' },
+    { label: 'PlaySuits and Playsets', key: '2' },
+    { label: 'Dresses', key: '3' },
+    { label: 'Winter Wear', key: '4' },
+]
