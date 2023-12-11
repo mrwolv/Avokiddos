@@ -16,6 +16,7 @@ import {
 } from '@ant-design/icons'
 import { Menu } from 'antd'
 import { MdFiberNew } from 'react-icons/md'
+import { Link } from 'react-router-dom'
 
 const MobileDrawer = ({ handleInputChange, isLabelHidden }) => {
     const [open, setOpen] = useState(false)
@@ -27,33 +28,48 @@ const MobileDrawer = ({ handleInputChange, isLabelHidden }) => {
         setOpen(false)
     }
 
-    function getItem (label, key, icon, children, type) {
+    function getItem (label, key, icon, children, type, path) {
         return {
             key,
             icon,
             children,
             label,
             type,
+            path,
         }
     }
     const items = [
-        getItem('Home', 'sub1', <HomeOutlined />),
-        getItem('New Arrivals', 'sub2', <MdFiberNew />),
-        getItem('Shops', 'sub3', <ShopOutlined />),
-        getItem('Boys', 'sub4', <TbMoodBoy />, [
+        getItem('Home', 'sub1', <HomeOutlined />, null, null, '/home'),
+        getItem(
+            'New Arrivals',
+            'sub2',
+            <MdFiberNew />,
+            null,
+            null,
+            '/new-arrivals'
+        ),
+        getItem('Shops', 'sub3', <ShopOutlined />, null, null, '/shop'),
+        getItem('Boys', 'sub4', <TbMoodBoy />, null, null, '/boys-shop', [
             getItem('All boys', 'sub4-1'),
             getItem('PlaySuits and PlaySets', 'sub4-2'),
             getItem('Shirts', 'sub4-3'),
             getItem('Winter Wear', 'sub4-4'),
         ]),
-        getItem('Girls', 'sub5', <CgGirl />, [
+        getItem('Girls', 'sub5', <CgGirl />, null, null, '/girls-shop', [
             getItem('All Girls', 'sub5-1'),
             getItem('PlaySuits and PlaySets', 'sub5-2'),
             getItem('Dresses', 'sub5-3'),
             getItem('Winter Wear', 'sub5-4'),
         ]),
-        getItem('About', 'sub6', <SiAboutdotme />),
-        getItem('Contact', 'sub7', <ContactsOutlined />),
+        getItem('About', 'sub6', <SiAboutdotme />, null, null, '/about'),
+        getItem(
+            'Contact',
+            'sub7',
+            <ContactsOutlined />,
+            null,
+            null,
+            '/contact'
+        ),
     ]
 
     const footerItems = [
@@ -116,24 +132,6 @@ const MobileDrawer = ({ handleInputChange, isLabelHidden }) => {
                             </div>
                         </div>
                     </form>
-                    {/* <ul className='flex flex-col gap-5 mt-6 capitalize mr-'>
-            <li>Home</li>
-            <li>New Arrivals</li>
-            <li>shop all</li>
-            <Menu
-              onClick={onClick}
-              style={{
-                width: 256
-              }}
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
-              mode='inline'
-              items={items}
-            />
-            <li>girls</li>
-            <li>about</li>
-            <li>contact</li>
-          </ul> */}
                     <Menu
                         mode='inline'
                         openKeys={openKeys}
@@ -143,8 +141,13 @@ const MobileDrawer = ({ handleInputChange, isLabelHidden }) => {
                             marginTop: '1rem',
                             fontSize: '1.1rem',
                         }}
-                        items={items}
-                    />
+                    >
+                        {items.map(item => (
+                            <Menu.Item key={item.key} icon={item.icon}>
+                                <Link to={item.path} onClick={onClose}>{item.label}</Link>
+                            </Menu.Item>
+                        ))}
+                    </Menu>
                 </div>
                 <Divider />
                 <footer className='mt-4 '>

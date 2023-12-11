@@ -1,7 +1,8 @@
 import { Collapse, Slider } from 'antd'
 import { useState } from 'react'
-import {colors} from '../../constants/constant'
-import {sizes} from '../../constants/constant'
+import { colors } from '../../constants/constant'
+import { sizes } from '../../constants/constant'
+import { LiaFilterSolid } from 'react-icons/lia'
 
 const { Panel } = Collapse
 
@@ -125,29 +126,28 @@ const FilterShopping = () => {
         },
     ]
 
-  
-    const Colors = () => (        
-    <div className='mt-4'>
+    const Colors = () => (
+        <div className='mt-4'>
             <h2 className=' font-barlow  text-[1.5rem]  mb-1.5 text-[#365644] '>
                 Colors
             </h2>
             {colors.map(color => (
                 <div className='flex items-center gap-4' key={color.id}>
-                    <CheckBox/>
+                    <CheckBox />
                     {color.name}
                 </div>
             ))}
         </div>
     )
-    
-    const Sizes = () => (        
-    <div className='mt-4'>
+
+    const Sizes = () => (
+        <div className='mt-4'>
             <h2 className='font-barlow  text-[1.5rem]  mb-1.5 text-[#365644] '>
                 Sizes
             </h2>
             {sizes.map(size => (
                 <div className='flex items-center gap-4' key={size.id}>
-                    <CheckBox/>
+                    <CheckBox />
                     {size.name}
                 </div>
             ))}
@@ -156,9 +156,10 @@ const FilterShopping = () => {
 
     return (
         <div className='mb-4 md:mb-0 '>
-            <div className='md:hidden'>
-                <button className='p-2 bg-yellow-500 outline outline-3 outline-red-600'>
-                    Filter
+            <div className='mt-4 ml-4 md:hidden'>
+                <button className='flex items-center justify-center gap-2 px-4 py-2 bg-[#3a3a3a] '>
+                    <LiaFilterSolid size={30} />
+                    <span className='text-white'>Filters</span>
                 </button>
             </div>
             <div className='hidden md:flex md:flex-col md:justify-center '>
@@ -230,8 +231,8 @@ const FilterShopping = () => {
                 </div>
 
                 {/* Colors list */}
-                <Colors/>
-                <Sizes/>
+                <Colors />
+                <Sizes />
             </div>
         </div>
     )

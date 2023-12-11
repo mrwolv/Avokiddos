@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-const ShopPageHeader = ({title,description}) => {
+const ShopPageHeader = ({ title, description }) => {
     return (
         <section className='mt-4'>
             <div className='relative'>
@@ -16,10 +16,10 @@ const ShopPageHeader = ({title,description}) => {
                 >
                     {title}
                 </h1>
-                <p className='absolute top-[55%] left-[30%]  md:left-[44%] md:top-[56%]  text-white  flex items-center gap-2 md:gap-3'>
-                    <span className="font-Inter ">Home</span>
+                <p className='absolute top-[55%] left-[30%]  md:left-[45.6%] md:top-[56%]  text-white  flex items-center gap-2 md:gap-3'>
+                    <span className='font-Inter '>Home</span>
                     <span className='w-1 h-1 bg-white rounded-full'></span>
-                    <span className="font-Inter">{description}</span>
+                    <span className='font-Inter'>{description}</span>
                 </p>
             </div>
         </section>
