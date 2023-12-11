@@ -7,6 +7,8 @@ import Shop from './pages/ShopPage'
 import ErroPage from './pages/ErroPage'
 import BoysShop from './pages/BoysShop'
 import GirlsShop from './pages/GirlsShop'
+import AboutUs from './pages/AboutUs'
+import ContactUs from './pages/ContactUs'
 
 const App = () => {
     return (
@@ -17,6 +19,8 @@ const App = () => {
                 <Route path="/shop" element={<PageLayout content={<Shop />} />} />
                 <Route path="/boys-shop" element={<PageLayout content={<BoysShop />} />} />
                 <Route path="/girls-shop" element={<PageLayout content={<GirlsShop />} />} />
+                <Route path="/about" element={<PageLayout content={<AboutUs />} />} />
+                <Route path="/contact" element={<PageLayout content={<ContactUs />} />} />
                 <Route path="/*" element={<ErroPage />} />
             </Routes>
         </BrowserRouter>

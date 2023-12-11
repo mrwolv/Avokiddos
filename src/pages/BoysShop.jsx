@@ -12,7 +12,7 @@ const BoysShop = () => {
                 description={'Boys'}
                 />
                 <SortingPage />
-                <div className='flex flex-wrap items-start gap-16 px-24 md:justify-evenly md:flex md:flex-nowrap '>
+                <div className='flex flex-wrap items-start gap-16 md:px-24 md:justify-evenly md:flex md:flex-nowrap '>
                     <FilterShopping />
                     <Products />
                 </div>

@@ -114,40 +114,41 @@ const Navbar = () => {
                                         Shop All
                                     </li>
                                 </Link>
-                                <li className='hover:text-red-400'>
-                                    <Dropdown overlay={boysMenu}>
-                                        <a
-                                            to='/boys-shop'
-                                            onClick={e => e.preventDefault()}
-                                        >
-                                            <Link to='boys-shop'>
-                                                <Space>
+                                <Link to='/boys-shop'>
+                                    <li className='hover:text-red-400'>
+                                        <Dropdown overlay={boysMenu}>
+                                            <Space>
+                                                <span className='text-[1.1rem]'>
                                                     Boys
-                                                    <DownOutlined className='text-xs' />
-                                                </Space>
-                                            </Link>
-                                        </a>
-                                    </Dropdown>
-                                </li>
+                                                </span>
+                                                <DownOutlined className='text-xs' />
+                                            </Space>
+                                        </Dropdown>
+                                    </li>
+                                </Link>
 
-                                <li className='hover:text-red-400'>
-                                    <Dropdown overlay={girlsMenu}>
-                                        <a onClick={e => e.preventDefault()}>
-                                            <Link to='girls-shop'>
-                                                <Space>
+                                <Link to='/girls-shop'>
+                                    <li className='hover:text-red-400'>
+                                        <Dropdown overlay={girlsMenu}>
+                                            <Space>
+                                                <span className='text-[1.1rem]'>
                                                     Girls
-                                                    <DownOutlined className='text-xs' />
-                                                </Space>
-                                            </Link>
-                                        </a>
-                                    </Dropdown>
-                                </li>
-                                <li className='hover:text-red-400'>
-                                    <Link to='about'>About</Link>
-                                </li>
-                                <li className='hover:text-red-400'>
-                                    <Link to='contact'>Contact</Link>
-                                </li>
+                                                </span>
+                                                <DownOutlined className='text-xs' />
+                                            </Space>
+                                        </Dropdown>
+                                    </li>
+                                </Link>
+                                <Link to='/about'>
+                                    <li className='hover:text-red-400'>
+                                        About
+                                    </li>
+                                </Link>
+                                <Link to='/contact'>
+                                    <li className='hover:text-red-400'>
+                                        Contact
+                                    </li>
+                                </Link>
                             </ul>
                         </div>
                     </div>
