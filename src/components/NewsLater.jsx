@@ -12,7 +12,6 @@ const NewsLater = () => {
           className='md:absolute md:transform md:-translate-y-[1rem] 
           md:-translate-x-[23%] hidden md:block w-[375px] rotate-90'
         />
-
         <img
           src='Vector-4.svg'
           alt='vector'

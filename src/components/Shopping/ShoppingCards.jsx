@@ -3,7 +3,7 @@ import CardShoping from './CardShoping';
 import { IoIosArrowForward } from 'react-icons/io';
 
 const ShoppingCards = ({title,btnTitle}) => {
-  console.log("title", title)
+  
   return (
     <section className='flex flex-col gap-4'>
       <div className='mt-20'>

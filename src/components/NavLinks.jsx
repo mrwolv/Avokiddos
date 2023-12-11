@@ -1,6 +1,7 @@
 import { IoIosArrowDown } from 'react-icons/io';
 
 const NavLinks = () => {
+  
   const links = [
     {name: 'new arrivals'},
     { name: 'shop all' },
