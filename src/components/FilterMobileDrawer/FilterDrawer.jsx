@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react'
 import { LiaFilterSolid } from 'react-icons/lia'
 import { Drawer } from 'antd'
@@ -6,7 +7,7 @@ import FilterBoysAndGirls from './FilterBoysAndGirls'
 import { FiltersColors } from './FilterColor'
 import { FilterSizes } from './FilterSizes'
 
-const FilterDrawer = () => {
+const FilterDrawer = ({ onChange, handleReset, inputValue }) => {
     const [open, setOpen] = useState(false)
 
     const showDrawer = () => {
@@ -38,7 +39,11 @@ const FilterDrawer = () => {
                 maskClosable={false}
                 mask={true}
             >
-                <FilterRange />
+                <FilterRange
+                    onChange={onChange}
+                    inputValue={inputValue}
+                    handleReset={handleReset}
+                />
                 <FilterBoysAndGirls />
                 <FiltersColors />
                 <FilterSizes />
