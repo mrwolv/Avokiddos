@@ -5,7 +5,7 @@ import { IoPersonOutline } from 'react-icons/io5'
 import { GiBasket } from 'react-icons/gi'
 import { DownOutlined } from '@ant-design/icons'
 import { Dropdown, Menu, Space } from 'antd'
-import MobileDrawer from '../MobileDrawer/MobileDrawer'
+import MobileDrawer from '../MobileNavDrawer/MobileDrawer'
 import { Link } from 'react-router-dom'
 import { boysItems,girlsItems } from '../../constants/constant'
 
@@ -90,6 +90,9 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </form>
+                        
+                        {/* Navbar Link for navigation */}
+                        
                         <div className='md:justify-between md:items-center md:flex '>
                             <ul className='flex items-center gap-4 hover:cursor-pointer '>
                                 <Link to='/'>
