@@ -9,6 +9,7 @@ import BoysShop from './pages/BoysShop'
 import GirlsShop from './pages/GirlsShop'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
+import SingleProductPage from './components/SingleProduct/SingleProductPage'
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                 <Route path="/girls-shop" element={<PageLayout content={<GirlsShop />} />} />
                 <Route path="/about" element={<PageLayout content={<AboutUs />} />} />
                 <Route path="/contact" element={<PageLayout content={<ContactUs />} />} />
+                <Route path='/product/:id' element={<PageLayout content={<SingleProductPage />} />} />
                 <Route path="/*" element={<ErroPage />} />
             </Routes>
         </BrowserRouter>
