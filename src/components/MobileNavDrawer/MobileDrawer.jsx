@@ -14,6 +14,7 @@ import {
     ContactsOutlined,
     MailOutlined,
 } from '@ant-design/icons'
+
 import { Menu } from 'antd'
 import { MdFiberNew } from 'react-icons/md'
 import { Link } from 'react-router-dom'
@@ -38,6 +39,7 @@ const MobileDrawer = ({ handleInputChange, isLabelHidden }) => {
             path,
         }
     }
+    /* Items to show in screen for displaying navlinks */
     const items = [
         getItem('Home', 'sub1', <HomeOutlined />, null, null, '/home'),
         getItem(
@@ -72,6 +74,7 @@ const MobileDrawer = ({ handleInputChange, isLabelHidden }) => {
         ),
     ]
 
+    /* Items to display footer navigations */
     const footerItems = [
         getItem('Account', 'sub1', <FaRegUser />),
         getItem('Help Desk', 'sub2', <MailOutlined />),
@@ -81,8 +84,10 @@ const MobileDrawer = ({ handleInputChange, isLabelHidden }) => {
     const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
 
     const [openKeys, setOpenKeys] = useState([''])
+    
     const onOpenChange = keys => {
         const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
+        
         if (latestOpenKey && rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
             setOpenKeys(keys)
         } else {
