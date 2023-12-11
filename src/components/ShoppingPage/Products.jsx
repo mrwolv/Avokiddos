@@ -3,10 +3,12 @@
 import { Rate } from 'antd'
 import ReactPaginate from 'react-paginate'
 import { useShopContext } from '../../contexts/useShopContext'
+import { Link } from 'react-router-dom'
 
 const Products = () => {
     /* Providing data from context */
     const { currentItems, handlePageClick, pageCount } = useShopContext()
+    console.log(currentItems)
 
     return (
         <main className=''>
@@ -16,34 +18,37 @@ const Products = () => {
                         key={product.id}
                         className='flex flex-col items-center justify-center '
                     >
-                        <div className='' key={product.category.id}>
-                            <img
-                                src={product.category.image}
-                                alt='kid image'
-                                height={200}
-                                className='object-cover w-full h-[320px] md:h-[400px] md:w-[300px] border border-gray-300 '
-                            />
-                        </div>
-                        <div className='flex flex-col items-center'>
-                            <span className='text-[.8rem] mt-4 text-red-500'>
-                                {product.category.name}
-                            </span>
-                            <span className='mt-2 font-lovesunshine text-[.7rem] md:text-[1rem]'>
-                                {product.description}
-                            </span>
-                            <span className='text-[.8rem] '>
-                                <Rate
-                                    allowHalf
-                                    allowClear
-                                    className='text-[.9rem] md:text[1.1rem] mt-2
+                        <Link    
+                         to={`/product/${product.title}`}>
+                            <div className='' key={product.category.id}>
+                                <img
+                                    src={product.category.image}
+                                    alt='kid image'
+                                    height={200}
+                                    className='object-cover w-full h-[320px] md:h-[400px] md:w-[300px] border border-gray-300 '
+                                />
+                            </div>
+                            <div className='flex flex-col items-center'>
+                                <span className='text-[.8rem] mt-4 text-red-500'>
+                                    {product.category.name}
+                                </span>
+                                <span className='mt-2 font-lovesunshine text-[.7rem] md:text-[1.2rem]'>
+                                    {product.title}
+                                </span>
+                                <span className='text-[.8rem] '>
+                                    <Rate
+                                        allowHalf
+                                        allowClear
+                                        className='text-[.9rem] md:text[1.1rem] mt-2
                                     '
-                                />{' '}
-                                {/* {product.rating.rate} */}
-                            </span>
-                            <span className='mt-2 text-[1.1rem] font-semibold'>
-                                &#8377; 2,379
-                            </span>
-                        </div>
+                                    />{' '}
+                                    {/* {product.rating.rate} */}
+                                </span>
+                                <span className='mt-2 text-[1.1rem] font-semibold'>
+                                    &#8377; 2,379
+                                </span>
+                            </div>
+                        </Link>
                     </div>
                 ))}
             </section>
@@ -55,7 +60,7 @@ const Products = () => {
                     onPageChange={handlePageClick}
                     pageCount={pageCount}
                     pageRangeDisplayed={8}
-                //    breakAriaLabels='Jump Forward'
+                    //    breakAriaLabels='Jump Forward'
                     renderOnZeroPageCount={null}
                     containerClassName='pagination'
                     pageLinkClassName='page-num rounded-full border hover:border-gray-500 w-3 h-3 px-3.5 py-2 hover:bg-gray-200 hover:text-black'
