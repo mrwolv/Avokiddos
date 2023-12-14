@@ -10,12 +10,15 @@ export function ShopProvider ({ children }) {
     /* Fetching fake Products Data */
     useEffect(() => {
         function getProducts () {
-            fetch('https://api.escuelajs.co/api/v1/products')
+            fetch('https://fakestoreapi.com/products')
                 .then(res => res.json())
                 .then(json => setProducts(json))
         }
         getProducts()
     }, [])
+
+    // console.log(products)
+
     const itemsPerPage = 9
     const [currentItems, setCurrentItems] = useState([])
     const [pageCount, setPageCount] = useState()
