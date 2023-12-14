@@ -9,7 +9,7 @@ import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { useLocation } from 'react-router-dom'
 import { IoMdCheckmarkCircle } from 'react-icons/io'
 import TabComponent from '../TabComponents/TabComponent'
-import ShoppingCards from '../Shopping/ShoppingCards'
+import LikeShop from '../AlsoLikeShop/LikeShop'
 
 import 'swiper/css'
 import 'swiper/css/free-mode'
@@ -232,11 +232,13 @@ const SingleProductPage = () => {
             </div>
             <div>
 
-            <TabComponent/>
+            <TabComponent
+            
+            />
             </div>
             <div>
-                <ShoppingCards
-                title='You May Also Like'
+                <LikeShop
+                title='You may also like'
                 />
             </div>
             {/* Tabs div */}
