@@ -19,10 +19,10 @@ const Products = () => {
                         className='flex flex-col items-center justify-center '
                     >
                         <Link    
-                         to={`/product/${product.title}`}>
+                         to={`/shop/${product.category}`}>
                             <div className='' key={product.category.id}>
                                 <img
-                                    src={product.category.image}
+                                    src={product.image}
                                     alt='kid image'
                                     height={200}
                                     className='object-cover w-full h-[320px] md:h-[400px] md:w-[300px] border border-gray-300 '
