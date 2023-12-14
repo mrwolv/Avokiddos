@@ -18,8 +18,7 @@ const Products = () => {
                         key={product.id}
                         className='flex flex-col items-center justify-center '
                     >
-                        <Link    
-                         to={`/shop/${product.category}`}>
+                        <Link to={`/shop/${product.category}`}>
                             <div className='' key={product.category.id}>
                                 <img
                                     src={product.image}
