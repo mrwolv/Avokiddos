@@ -64,3 +64,14 @@ export const girlsItems = [
     { label: 'Dresses', key: '3' },
     { label: 'Winter Wear', key: '4' },
 ]
+
+export const shoppingData = [
+    { id: 1, imageUrl: '/kid4.jpg', altText: 'KidImages' },
+    { id: 2, imageUrl: '/kid4.jpg', altText: 'KidImages' },
+    { id: 3, imageUrl: '/kid4.jpg', altText: 'KidImages' },
+    { id: 4, imageUrl: '/kid4.jpg', altText: 'KidImages' },
+    { id: 5, imageUrl: '/kid4.jpg', altText: 'KidImages' },
+    { id: 6, imageUrl: '/kid4.jpg', altText: 'KidImages' },
+    { id: 7, imageUrl: '/kid4.jpg', altText: 'KidImages' },
+    { id: 8, imageUrl: '/kid4.jpg', altText: 'KidImages' },
+]
