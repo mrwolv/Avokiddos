@@ -1,23 +1,20 @@
 /* eslint-disable no-unused-vars */
+import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Breadcrumb, ConfigProvider } from 'antd'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import { CiHeart } from 'react-icons/ci'
 import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { Radio, Tabs } from 'antd'
 import { useLocation } from 'react-router-dom'
-import { useMatches } from 'react-router-dom'
-import useBreadcrumbs from 'use-react-router-breadcrumbs'
-
 import { IoMdCheckmarkCircle } from 'react-icons/io'
+import TabComponent from '../TabComponents/TabComponent'
+import ShoppingCards from '../Shopping/ShoppingCards'
 
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
-import { useState } from 'react'
-import TabComponent from '../TabComponents/TabComponent'
 
 // SwiperCore.use([FreeMode, Navigation, Thumbs])
 
@@ -233,7 +230,15 @@ const SingleProductPage = () => {
                     </div>
                 </div>
             </div>
+            <div>
+
             <TabComponent/>
+            </div>
+            <div>
+                <ShoppingCards
+                title='You May Also Like'
+                />
+            </div>
             {/* Tabs div */}
         </section>
     )

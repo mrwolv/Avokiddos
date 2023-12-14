@@ -9,7 +9,7 @@ const TabComponent = () => {
 
     function Label (id) {
         if (id === '1') {
-            return <h1 className='text-[1rem]'>Products Details</h1>
+            return <h1 className='text-[1rem] '>Products Details</h1>
         } else if (id === '2') {
             return <h1 className='text-[1rem]'>Size Guide</h1>
         } else {
@@ -20,7 +20,7 @@ const TabComponent = () => {
     function TabContent (id) {
         if (id === '1') {
             return (
-                <div className='px-10'>
+                <div className='px-10 mb-3'>
                     <ul className='text-[#6c7175]  '>
                         <li className='flex items-center gap-2 text-[1rem] '>
                             <span className='w-[6.5px] h-[6.5px] bg-[#6c7175]  rounded-full '></span>
@@ -97,11 +97,11 @@ const TabComponent = () => {
             )
         } else {
             return (
-                <>
+                <div className='p-3'>
                     <h1 className='text-lg text-red-400 '>
                         This is Review Section
                     </h1>
-                </>
+                </div>
             )
         }
     }
@@ -122,7 +122,7 @@ const TabComponent = () => {
                 }}
             >
                 <Tabs
-                    className='mb-8 font-barlow '
+                    className='mb-8 border-b border-l border-r font-barlow '
                     defaultActiveKey='1'
                     tabBarGutter={10}
                     tabBarStyle={{

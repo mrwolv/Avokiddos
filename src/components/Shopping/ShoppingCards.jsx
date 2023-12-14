@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
+import { useParams } from 'react-router-dom';
 import CardShoping from './CardShoping';
 import { IoIosArrowForward } from 'react-icons/io';
 
 const ShoppingCards = ({title,btnTitle}) => {
+  
+  const params = useParams()
+  console.log(params)
   
   return (
     <section className='flex flex-col gap-4'>
