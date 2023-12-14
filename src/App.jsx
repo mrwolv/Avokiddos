@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, } from 'react-router-dom'
 import PageLayout from './layouts/PageLayout'
 
 /* Pages to  show */
@@ -12,6 +12,10 @@ import ContactUs from './pages/ContactUs'
 import SingleProductPage from './components/SingleProduct/SingleProductPage'
 
 const App = () => {
+    
+
+
+
     return (
         <div className='h-full'>
              <BrowserRouter>
@@ -22,7 +26,7 @@ const App = () => {
                 <Route path="/girls-shop" element={<PageLayout content={<GirlsShop />} />} />
                 <Route path="/about" element={<PageLayout content={<AboutUs />} />} />
                 <Route path="/contact" element={<PageLayout content={<ContactUs />} />} />
-                <Route path='/product/:id' element={<PageLayout content={<SingleProductPage />} />} />
+                <Route path='/shop/:name' element={<PageLayout content={<SingleProductPage  />} />} />
                 <Route path="/*" element={<ErroPage />} />
             </Routes>
         </BrowserRouter>
