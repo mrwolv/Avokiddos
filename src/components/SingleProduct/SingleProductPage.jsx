@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
@@ -10,12 +11,13 @@ import { useLocation } from 'react-router-dom'
 import { IoMdCheckmarkCircle } from 'react-icons/io'
 import TabComponent from '../TabComponents/TabComponent'
 import LikeShop from '../AlsoLikeShop/LikeShop'
-
+import { sizes,images } from '../../constants/constant'
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
-import { sizes } from '../../constants/constant'
+
+
 
 // SwiperCore.use([FreeMode, Navigation, Thumbs])
 
@@ -37,20 +39,6 @@ const SingleProductPage = () => {
     }
 
     const params = useParams()
-
-    /* Images Array */
-    const images = [
-        { id: 1, imgUrl: 'https://swiperjs.com/demos/images/nature-1.jpg' },
-        { id: 2, imgUrl: 'https://swiperjs.com/demos/images/nature-2.jpg' },
-        { id: 3, imgUrl: 'https://swiperjs.com/demos/images/nature-3.jpg' },
-        { id: 4, imgUrl: 'https://swiperjs.com/demos/images/nature-4.jpg' },
-        { id: 5, imgUrl: 'https://swiperjs.com/demos/images/nature-5.jpg' },
-        { id: 6, imgUrl: 'https://swiperjs.com/demos/images/nature-6.jpg' },
-        { id: 7, imgUrl: 'https://swiperjs.com/demos/images/nature-7.jpg' },
-        { id: 8, imgUrl: 'https://swiperjs.com/demos/images/nature-8.jpg' },
-        { id: 9, imgUrl: 'https://swiperjs.com/demos/images/nature-9.jpg' },
-        { id: 10, imgUrl: 'https://swiperjs.com/demos/images/nature-10.jpg' },
-    ]
 
     /* Getting BreadCrumbs using Location Router dom */
     const location = useLocation()
@@ -98,6 +86,90 @@ const SingleProductPage = () => {
             </ConfigProvider>
         )
     }
+    /* Function of Image Magnifiers  */
+    
+    function ImageMagnifier ({
+        src,
+        width,
+        height,
+        magnifierHeight = 100,
+        magnifieWidth = 100,
+        zoomLevel = 1.5,
+    }) {
+        const [[x, y], setXY] = useState([0, 0])
+        const [[imgWidth, imgHeight], setSize] = useState([0, 0])
+        const [showMagnifier, setShowMagnifier] = useState(false)
+        return (
+            <div
+                style={{
+                    position: 'relative',
+                    height: height,
+                    width: width,
+                }}
+            >
+                <img
+                    src={src}
+                    style={{ height: height, width: width }}
+                    onMouseEnter={e => {
+                        // update image size and turn-on magnifier
+                        const elem = e.currentTarget
+                        const { width, height } = elem.getBoundingClientRect()
+                        setSize([width, height])
+                        setShowMagnifier(true)
+                    }}
+                    onMouseMove={e => {
+                        // update cursor position
+                        const elem = e.currentTarget
+                        const { top, left } = elem.getBoundingClientRect()
+
+                        // calculate cursor position on the image
+                        const x = e.pageX - left - window.pageXOffset
+                        const y = e.pageY - top - window.pageYOffset
+                        setXY([x, y])
+                    }}
+                    onMouseLeave={() => {
+                        // close magnifier
+                        setShowMagnifier(false)
+                    }}
+                    alt={'img'}
+                />
+
+                <div
+                    style={{
+                        display: showMagnifier ? '' : 'none',
+                        position: 'absolute',
+                        
+                        // prevent magnifier blocks the mousemove event of img
+                        pointerEvents: 'none',
+                        // set size of magnifier
+                        height: `${magnifierHeight}px`,
+                        width: `${magnifieWidth}px`,
+                        // move element center to cursor pos
+                        top: `${y - magnifierHeight / 3}px`,
+                        left: `${x - magnifieWidth / 3}px`,
+                        opacity: '1', // reduce opacity so you can verify position
+                        border: '1px solid lightgray',
+                        backgroundColor: 'white',
+                        backgroundImage: `url('${src}')`,
+                        backgroundRepeat: 'no-repeat',
+
+                        //calculate zoomed image size
+                        backgroundSize: `${imgWidth * zoomLevel}px ${
+                            imgHeight * zoomLevel
+                        }px`,
+
+                        //calculate position of zoomed image.
+                        backgroundPositionX: `${
+                            -x * zoomLevel + magnifieWidth / 2
+                        }px`,
+                        backgroundPositionY: `${
+                            -y * zoomLevel + magnifierHeight / 2
+                        }px`,
+                    }}
+                ></div>
+            </div>
+        )
+    }
 
     return (
         <section className='w-full'>
@@ -108,27 +180,29 @@ const SingleProductPage = () => {
                 {/* Left Image side */}
                 <div>
                     <Swiper
-                        style={{
-                            '--swiper-navigation-color': '#fff',
-                            '--swiper-pagination-color': '#fff',
-                        }}
-                        spaceBetween={10}
-                        // navigation={true}
-                        loop={true}
-                        thumbs={{ swiper: thumbsSwiper }}
+                        thumbs={
+                            thumbsSwiper ? { swiper: thumbsSwiper } : undefined
+                        }
                         modules={[FreeMode, Navigation, Thumbs]}
-                        className='mySwiper2 h-[400px] w-[400px] mt-4 cursor-pointer'
+                        className='mySwiper2 h-[400px] w-[400px] mt-4 cursor-pointer '
                     >
-                        <div className='bg-red-400'>
+                        <div className=''>
                             {images.map(image => (
                                 <SwiperSlide key={image.id}>
-                                    <img src={image.imgUrl} alt={image.id} />
+                                    {/* <img src={image.imgUrl} alt={image.id} /> */}
+                                     <ImageMagnifier
+                                        src={image.imgUrl}
+                                        height={400}
+                                        width={400}
+                                    /> 
+                                   {/*  <Magnifier image={image.imgUrl} /> */}
+
                                 </SwiperSlide>
                             ))}
                         </div>
                     </Swiper>
                     <Swiper
-                        // onSwiper={swiper => console.log(swiper)}
+                        onSwiper={setThumbsSwiper}
                         onClick={e => console.log(e)}
                         onSlideChange={() => console.log('slide change')}
                         spaceBetween={10}
@@ -136,9 +210,9 @@ const SingleProductPage = () => {
                         freeMode={true}
                         watchSlidesProgress={true}
                         modules={[FreeMode, Navigation, Thumbs]}
-                        className='mySwiper h-[80px] w-[350px] cursor-pointer mt-4 bg-red-400'
+                        className='mySwiper h-[80px] w-[350px] cursor-pointer mt-4 '
                     >
-                        <div className='bg-red-400'>
+                        <div className=''>
                             {images.map(image => (
                                 <SwiperSlide key={image.id}>
                                     <img src={image.imgUrl} alt={image.id} />
@@ -162,19 +236,6 @@ const SingleProductPage = () => {
                     <ul className='flex gap-2 mt-5'>
                         {sizes.map(size => (
                             <li key={size.id}>
-                                {/* <button
-                                    className={`w-16 border-2 rounded-sm border-gray-400 h-8
-                                     active:scale-95 text-[.8rem] hover:bg-red-400  hover:border-none hover:ring hover:ring-offset-0 hover:ring-gray-300 
-                                     ${
-                                         size.name > '2-3 Yrs'
-                                             ? 'text-gray-400 hover:bg-transparent cursor-not-allowed'
-                                             : ''
-                                     }
-                                     `}
-                                >
-                                    {size.name}
-                                </button> */}
-
                                 <button
                                     className={`relative w-16 border-2 rounded-sm border-gray-400 h-8
                                       active:scale-95 text-[.8rem] hover:bg-red-400  hover:border-none hover:ring hover:ring-offset-0 hover:ring-gray-300 
