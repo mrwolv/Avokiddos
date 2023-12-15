@@ -15,12 +15,12 @@ import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
+import { sizes } from '../../constants/constant'
 
 // SwiperCore.use([FreeMode, Navigation, Thumbs])
 
 const SingleProductPage = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null)
-   
 
     const [num, setNum] = useState(1)
 
@@ -99,8 +99,6 @@ const SingleProductPage = () => {
         )
     }
 
-
-
     return (
         <section className='w-full'>
             <div className='h-24 bg-[#fedacd] md:h-36 flex items-center mt-2 md:mt-4 justify-center md:justify-start px-10 md:px-28'>
@@ -161,6 +159,47 @@ const SingleProductPage = () => {
                             dad in this snug, trendy and easy to carry shirt.
                         </p>
                     </div>
+                    <ul className='flex gap-2 mt-5'>
+                        {sizes.map(size => (
+                            <li key={size.id}>
+                                {/* <button
+                                    className={`w-16 border-2 rounded-sm border-gray-400 h-8
+                                     active:scale-95 text-[.8rem] hover:bg-red-400  hover:border-none hover:ring hover:ring-offset-0 hover:ring-gray-300 
+                                     ${
+                                         size.name > '2-3 Yrs'
+                                             ? 'text-gray-400 hover:bg-transparent cursor-not-allowed'
+                                             : ''
+                                     }
+                                     `}
+                                >
+                                    {size.name}
+                                </button> */}
+
+                                <button
+                                    className={`relative w-16 border-2 rounded-sm border-gray-400 h-8
+                                      active:scale-95 text-[.8rem] hover:bg-red-400  hover:border-none hover:ring hover:ring-offset-0 hover:ring-gray-300 
+                                     ${
+                                         size.name > '2-3 Yrs'
+                                             ? 'text-gray-400 hover:bg-transparent hover:cursor-not-allowed '
+                                             : ''
+                                     }
+                                        `}
+                                    disabled={size.name > '2-3 Yrs'}
+                                >
+                                    {size.name > '2-3 Yrs' && (
+                                        <>
+                                            <p className='absolute text-[2.2rem]    text-red-500 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
+                                                &#10006;{' '}
+                                                {/* Unicode character for a cross */}
+                                            </p>
+                                            {size.name}
+                                        </>
+                                    )}
+                                    {size.name <= '2-3 Yrs' && size.name}
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
                     <div className='flex items-center gap-4 mt-6 mr-2 md:mr-0 md:gap-8 '>
                         <div className='flex items-center justify-center w-32 h-10 text-lg font-bold '>
                             <button
@@ -182,8 +221,8 @@ const SingleProductPage = () => {
                                 +{' '}
                             </button>
                         </div>
-                        <button className='w-40 h-10 text-white bg-red-400 '>
-                            Add to card
+                        <button className='w-40 h-10 text-white duration-150 bg-red-400 active:transform active:scale-95'>
+                            Add to cart
                         </button>
                         <button className='flex items-center justify-center w-16 h-10 text-black border rounded-sm hover:text-white hover:bg-black'>
                             <CiHeart size={20} className='font-bold' />
@@ -231,15 +270,10 @@ const SingleProductPage = () => {
                 </div>
             </div>
             <div>
-
-            <TabComponent
-            
-            />
+                <TabComponent />
             </div>
             <div>
-                <LikeShop
-                title='You may also like'
-                />
+                <LikeShop title='You may also like' />
             </div>
             {/* Tabs div */}
         </section>
