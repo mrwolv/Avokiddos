@@ -40,55 +40,55 @@ const TabComponent = () => {
                 <section className='grid items-center justify-center grid-flow-row px-10 mt-2 md:grid-flow-row md:gap-2 md:grid-cols-2 grid-col-1'>
                     <div className='flex items-center justify-center hover:shadow-2xl md:w-[500px] h-[300px] w-[330px] px-5'>
                         <Image
-                            src='/public/sizes/boys-bottom-pants-chart.jpg'
+                            src='/sizes/boys-bottom-pants-chart.jpg'
                             visible={false}
                             width={300}
                         />
                         <Image
-                            src='/public/sizes/boys-bottom-pants.jpg'
+                            src='/sizes/boys-bottom-pants.jpg'
                             width={250}
                             visible={false}
                         />
                     </div>
                     <div className='flex items-center justify-center hover:shadow-2xl md:w-[500px] h-[300px] w-[330px] px-5'>
                         <Image
-                            src='/public/sizes/AVOKIDDOS-Boys.jpg'
+                            src='/sizes/AVOKIDDOS-Boys.jpg'
                             visible={false}
                             height={200}
                         />
                     </div>
                     <div className='flex items-center justify-center hover:shadow-2xl md:w-[500px] h-[300px] w-[330px] px-5'>
                         <Image
-                            src='/public/sizes/boys-bottom-pants-chart.jpg'
+                            src='/sizes/boys-bottom-pants-chart.jpg'
                             visible={false}
                             width={300}
                         />
                         <Image
-                            src='/public/sizes/Boys-bottom-shorts.jpg'
+                            src='/sizes/Boys-bottom-shorts.jpg'
                             width={390}
                             visible={false}
                         />
                     </div>
                     <div className='flex items-center justify-center hover:shadow-2xl md:w-[500px] h-[300px] w-[330px] px-5'>
                         <Image
-                            src='/public/sizes/girls-skirt-chart.jpg'
+                            src='/sizes/girls-skirt-chart.jpg'
                             visible={false}
                             width={300}
                         />
                         <Image
-                            src='/public/sizes/Girls-dress.jpg'
+                            src='/sizes/Girls-dress.jpg'
                             width={285}
                             visible={false}
                         />
                     </div>
                     <div className='flex  items-center justify-center hover:shadow-2xl md:w-[500px] h-[300px] w-[330px] px-5'>
                         <Image
-                            src='/public/sizes/boys-bottom-pants-chart.jpg'
+                            src='/sizes/boys-bottom-pants-chart.jpg'
                             visible={false}
                             width={300}
                         />
                         {/* <Image
-                            src='/public/sizes/boys-bottom-pants.jpg'
+                            src='/sizes/boys-bottom-pants.jpg'
                             width={250}
                             visible={false}
                         /> */}
