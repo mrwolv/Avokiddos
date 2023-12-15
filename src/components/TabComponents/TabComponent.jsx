@@ -1,7 +1,4 @@
 import { ConfigProvider, Tabs, Image } from 'antd'
-import bottomPant from '/sizes/boys-bottom-pants.jpg'
-import bottomPantChart from '/sizes/boys-bottom-pants-chart.jpg'
-import avokiddos from '/sizes/AVOKIDDOS-Boys.jpg'
 
 const TabComponent = () => {
     // const [size, setSize] = useState('large')
@@ -43,19 +40,19 @@ const TabComponent = () => {
                 <section className='grid items-center justify-center grid-flow-row px-10 mt-2 md:grid-flow-row md:gap-2 md:grid-cols-2 grid-col-1'>
                     <div className='flex items-center justify-center hover:shadow-2xl md:w-[500px] h-[300px] w-[330px] px-5'>
                         <Image
-                            src={bottomPantChart}
+                            src='/sizes/boys-bottom-pants-chart.jpg'
                             visible={false}
                             width={300}
                         />
                         <Image
-                            src={bottomPant}
+                            src='/sizes/boys-bottom-pants.jpg'
                             width={250}
                             visible={false}
                         />
                     </div>
                     <div className='flex items-center justify-center hover:shadow-2xl md:w-[500px] h-[300px] w-[330px] px-5'>
                         <Image
-                            src={avokiddos}
+                            src='/sizes/AVOKIDDOS-Boys.jpg'
                             visible={false}
                             height={200}
                         />
