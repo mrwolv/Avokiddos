@@ -88,3 +88,33 @@ export const images = [
     { id: 9, imgUrl: 'https://swiperjs.com/demos/images/nature-9.jpg' },
     { id: 10, imgUrl: 'https://swiperjs.com/demos/images/nature-10.jpg' },
 ]
+
+export const data = [
+    {
+        id: 1,
+        imageUrl: '/kids.jpg',
+        mobileImageUrl: '/mobile-banner.jpg',
+        altText: 'kids',
+        description:
+            'Stylish & Comfortable Options For Your Li&apos;l One,20% Off on all orders above Rs. 999. Hurry!',
+        btn: 'Shop now',
+    },
+    {
+        id: 2,
+        imageUrl: '/kids.jpg',
+        mobileImageUrl: '/mobile-banner.jpg',
+        altText: 'kids',
+        description: 'Stylish & Comfortable Options For Your Lil',
+        discountDescription: '20% Off on all orders above Rs. 999. Hurry!',
+        btn: 'Shop now',
+    },
+    {
+        id: 3,
+        imageUrl: '/kids.jpg',
+        mobileImageUrl: '/mobile-banner.jpg',
+        altText: 'kids',
+        description: 'Stylish & Comfortable Options For Your Lil',
+        discountDescription: '20% Off on all orders above Rs. 999. Hurry!',
+        btn: 'Shop now',
+    },
+]
