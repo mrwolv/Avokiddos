@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const Products = () => {
     /* Providing data from context */
     const { currentItems, handlePageClick, pageCount } = useShopContext()
-    console.log(currentItems)
+   
 
     return (
         <main className=''>
