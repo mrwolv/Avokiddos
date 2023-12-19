@@ -22,7 +22,7 @@ export function ShopProvider ({ children }) {
     const itemsPerPage = 9
     const [currentItems, setCurrentItems] = useState([])
     const [pageCount, setPageCount] = useState()
-    const [itemOffset, setItemOffset] = useState(9)
+    const [itemOffset, setItemOffset] = useState(0)
     const resultCount = products.length
 
     useEffect(() => {
