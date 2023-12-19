@@ -25,7 +25,7 @@ const Header = () => {
 
                 <div className='flex items-center gap-3 mr-2 md:mr-4 '>
                     <FaFacebookF size={16} className='hover:cursor-pointer' />
-                    <FaInstagram size={22} className='hover:cursor-pointer' />
+                    <FaInstagram size={16} className='hover:cursor-pointer' />
                 </div>
             </header>
         </div>
