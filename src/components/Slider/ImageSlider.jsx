@@ -109,7 +109,7 @@ const MobileImageComponent = ({ imageData }) => {
       >
         {imageData.map(item => (
           <SwiperSlide key={item.id} className='relative '>
-            <div className='absolute inset-0 flex flex-col items-center justify-center animate-text'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center animate__animated animate__zoomIn'>
               <p className=' text-center text-white text-[2.8rem] font-lovesunshine'>
                 Summer Sorbet Collection is here for your lil ones
               </p>
