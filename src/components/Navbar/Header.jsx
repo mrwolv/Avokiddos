@@ -6,11 +6,11 @@ const Header = () => {
         <div>
             <header className='bg-[#EF564C] h-11 text-[.8rem] text-white flex items-center justify-between md:flex md:justify-between md:px-8'>
                 <div className='hidden gap-8 cursor-pointer sm:flex sm:items-center '>
-                    <div className='sm:flex sm:items-center '>
+                    <div className='md:flex md:justify-between md:gap-1 md:items-center '>
                         <CiMail size={18} />
                         <span className=''>helpdesk@avokiddos.in</span>
                     </div>
-                    <div className='sm:flex sm:items-center'>
+                    <div className='md:flex md:justify-between md:gap-1 md:items-center '>
                         <span>
                             <FaPhone size={14} />
                         </span>
