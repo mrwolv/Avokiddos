@@ -1,10 +1,10 @@
-import { CiMail, CiFacebook } from 'react-icons/ci'
-import { FaPhone, FaInstagram } from 'react-icons/fa6'
+import { CiMail } from 'react-icons/ci'
+import { FaFacebookF, FaInstagram, FaPhone } from 'react-icons/fa'
 
 const Header = () => {
     return (
         <div>
-            <header className='bg-[#EF564C] h-11 text-[.8rem] text-white flex items-center justify-between md:text-[1rem] md:flex md:justify-between md:px-8'>
+            <header className='bg-[#EF564C] h-11 text-[.8rem] text-white flex items-center justify-between md:flex md:justify-between md:px-8'>
                 <div className='hidden gap-8 cursor-pointer sm:flex sm:items-center '>
                     <div className='sm:flex sm:items-center '>
                         <CiMail size={18} />
@@ -24,8 +24,8 @@ const Header = () => {
                 </div>
 
                 <div className='flex items-center gap-3 mr-2 md:mr-4 '>
+                    <FaFacebookF size={16} className='hover:cursor-pointer' />
                     <FaInstagram size={22} className='hover:cursor-pointer' />
-                    <CiFacebook size={22} className='hover:cursor-pointer' />
                 </div>
             </header>
         </div>
