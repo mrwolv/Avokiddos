@@ -1,20 +1,35 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import MobileDrawer from '../MobileNavDrawer/MobileDrawer'
 import { FaSearch } from 'react-icons/fa'
 import { CiHeart } from 'react-icons/ci'
-import { IoPersonOutline } from 'react-icons/io5'
+import { LoadingOutlined } from '@ant-design/icons'
 import { GiBasket } from 'react-icons/gi'
-import { DownOutlined } from '@ant-design/icons'
-import { Dropdown, Menu, Space } from 'antd'
-import MobileDrawer from '../MobileNavDrawer/MobileDrawer'
-import { Link } from 'react-router-dom'
-import { boysItems,girlsItems } from '../../constants/constant'
+import { IoPersonOutline, IoChevronDownOutline } from 'react-icons/io5'
+import { Dropdown, Menu, Space, Spin } from 'antd'
+/* Constant imported */
+import { boysItems, girlsItems } from '../../constants/constant'
 
 const Navbar = () => {
+    const [isLoading, setIsLoading] = useState(false)
+
+    const [inputValue, setInputValue] = useState('')
+
     const [isLabelHidden, setIsLabelHidden] = useState(false)
 
     const handleInputChange = e => {
-        const inputValue = e.target.value
-        setIsLabelHidden(!!inputValue)
+        const value = e.target.value
+        setInputValue(value)
+        setIsLabelHidden(!!value)
+
+        // Simulate an asynchronous operation (e.g., API call) with a delay
+        setIsLoading(true)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 1000) // Adjust the delay as needed
+
+        console.log(value)
     }
 
     /* Antd Drawer */
@@ -23,9 +38,7 @@ const Navbar = () => {
         alert(`Selected: ${key}`)
     }
 
-   
-
-   const boysMenu = (
+    const boysMenu = (
         <Menu
             onClick={onClick}
             className='px-12 border border-gray-300 rounded shadow-lg w-50 hover:text-red-400 '
@@ -80,64 +93,86 @@ const Navbar = () => {
                                 <div className='flex items-center '>
                                     <input
                                         type='search'
-                                        id='search'
-                                        className='outline-none border-none focus:border-none bg-[#fff3f2] py-2 pl-8 pr-8'
+                                        className='outline-none border-none text-[.9rem] focus:border-none bg-[#fff3f2] py-2.5 px-12'
                                         onChange={handleInputChange}
+                                        value={inputValue}
                                     />
-                                    <div className='mb-4 cursor-pointer bg-red'>
-                                        <FaSearch className='absolute right-2 text-[#419e7d] hover:bg-[#fedacd]' />
-                                    </div>
+                                    {isLoading ? (
+                                        <Spin
+                                            className='absolute text-gray-400 right-4'
+                                            indicator={
+                                                <LoadingOutlined
+                                                    style={{
+                                                        fontSize: 24,
+                                                    }}
+                                                    spin
+                                                />
+                                            }
+                                        />
+                                    ) : (
+                                        <div className='mb-4 cursor-pointer bg-red'>
+                                            <FaSearch className='absolute right-2 text-[#419e7d] hover:bg-[#fedacd]' />
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </form>
-                        
+
                         {/* Navbar Link for navigation */}
-                        
+
                         <div className='md:justify-between md:items-center md:flex '>
-                            <ul className='flex items-center gap-4 hover:cursor-pointer '>
+                            <ul className='flex items-center gap-4 hover:cursor-pointer text-[1rem]  '>
                                 <Link to='/'>
-                                    <li className='hover:text-red-400'>Home</li>
+                                    <li className='hover:text-red-400 font-barlow'>
+                                        Home
+                                    </li>
                                 </Link>
-                                <li className='hover:text-red-400'>
+                                <li className='hover:text-red-400 font-barlow'>
                                     New Arrivals
                                 </li>
                                 <Link to='/shop'>
-                                    <li className='hover:text-red-400'>
+                                    <li className='hover:text-red-400 font-barlow'>
                                         Shop All
                                     </li>
                                 </Link>
-                                <Link to='/boys-shop'>
-                                    <li className='hover:text-red-400'>
-                                        <Dropdown overlay={boysMenu}>
-                                            <Space>
-                                                <span className='text-[1.1rem]'>
+                                <li className='hover:text-red-400 font-barlow'>
+                                    <Dropdown overlay={boysMenu}>
+                                        <Space>
+                                            <Link
+                                                to='/boys-shop'
+                                                className='hover:text-red-400 '
+                                            >
+                                                <span className='text-[1rem]'>
                                                     Boys
                                                 </span>
-                                                <DownOutlined className='text-xs' />
-                                            </Space>
-                                        </Dropdown>
-                                    </li>
-                                </Link>
+                                            </Link>
+                                            <IoChevronDownOutline />
+                                        </Space>
+                                    </Dropdown>
+                                </li>
 
-                                <Link to='/girls-shop'>
-                                    <li className='hover:text-red-400'>
-                                        <Dropdown overlay={girlsMenu}>
-                                            <Space>
-                                                <span className='text-[1.1rem]'>
+                                <li className='hover:text-red-400 font-barlow'>
+                                    <Dropdown overlay={girlsMenu}>
+                                        <Space>
+                                            <Link
+                                                to='/girls-shop'
+                                                className='hover:text-red-400'
+                                            >
+                                                <span className='text-[1rem]'>
                                                     Girls
                                                 </span>
-                                                <DownOutlined className='text-xs' />
-                                            </Space>
-                                        </Dropdown>
-                                    </li>
-                                </Link>
+                                            </Link>
+                                            <IoChevronDownOutline />
+                                        </Space>
+                                    </Dropdown>
+                                </li>
                                 <Link to='/about'>
-                                    <li className='hover:text-red-400'>
+                                    <li className='hover:text-red-400 font-barlow'>
                                         About
                                     </li>
                                 </Link>
                                 <Link to='/contact'>
-                                    <li className='hover:text-red-400'>
+                                    <li className='hover:text-red-400 font-barlow'>
                                         Contact
                                     </li>
                                 </Link>
